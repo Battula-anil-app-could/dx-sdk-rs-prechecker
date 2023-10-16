@@ -22,6 +22,7 @@ impl Address {
 
     pub fn from_bech32_string(bech32: &str) -> Result<Self> {
         let (_, data, _) = bech32::decode(bech32)?;
+        eprintln!("{:?}", &data);
         let data = Vec::<u8>::from_base32(&data)?;
 
         let mut bits: [u8; 32] = [0u8; 32];
@@ -89,7 +90,7 @@ pub mod tests {
     #[test]
     fn test_decode_address() {
         let addr = Address::from_bech32_string(
-            "erd1qqqqqqqqqqqqqpgqyfjjn43spw7teklwtpz4x5waygq2mluyj9ts0mdwn6",
+            "moa1qqqqqqqqqqqqqpgqyfjjn43spw7teklwtpz4x5waygq2mluyj9tszrtp02",
         )
         .unwrap();
         let encode = hex::encode(addr.to_bytes());

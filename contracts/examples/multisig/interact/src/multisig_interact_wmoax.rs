@@ -14,7 +14,7 @@ use dharitri_sc_snippets::{
 
 use super::*;
 
-const WMOAX_SWAP_SC_BECH32: &str = "erd1qqqqqqqqqqqqqpgqcy2wua5cq59y6sxqj2ka3scayh5e5ms7cthqht8xtp";
+const WMOAX_SWAP_SC_BECH32: &str = "moa189n9gzenf4d5p9x0368e3wsjnytll9ngkr6z8phd08073elhrgldz8xdq6";
 const WMOAX_TOKEN_IDENTIFIER: &str = "WMOAX-6cf38e";
 const WRAP_AMOUNT: u64 = 50000000000000000; // 0.05 MOAX
 const UNWRAP_AMOUNT: u64 = 25000000000000000; // 0.025 WMOAX

@@ -223,8 +223,8 @@ mod tests {
                   "round": 7639115,
                   "epoch": 6333,
                   "value": "0",
-                  "receiver": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
-                  "sender": "erd14r7m6drneg69jyxvxxnrsss6x5gg2cqqwreyhdwanj0fcza0ynnq5jmy4g",
+                  "receiver": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
+                  "sender": "moa1dp7pytgfmlqkctqftvsr5fqv9vem7u573y9cea3uw5ul79d5xeqsjvaj39",
                   "gasPrice": 1000000000,
                   "gasLimit": 25500000,
                   "gasUsed": 15297149,
@@ -248,8 +248,8 @@ mod tests {
                       "hash": "a23faa3c80bae0b968f007ff0fad3afdec05b4e71d749c3d583dec10c6eb05a2",
                       "nonce": 0,
                       "value": 0,
-                      "receiver": "erd14r7m6drneg69jyxvxxnrsss6x5gg2cqqwreyhdwanj0fcza0ynnq5jmy4g",
-                      "sender": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
+                      "receiver": "moa1dp7pytgfmlqkctqftvsr5fqv9vem7u573y9cea3uw5ul79d5xeqsjvaj39",
+                      "sender": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
                       "data": "DCTTransfer@574d4f41582d643763366262@03856446ff9a304b",
                       "prevTxHash": "d4058bd3c13db0b14832c7c58fe163db2f579ff6544380586b8a27d88b4a5070",
                       "originalTxHash": "d4058bd3c13db0b14832c7c58fe163db2f579ff6544380586b8a27d88b4a5070",
@@ -257,10 +257,10 @@ mod tests {
                       "gasPrice": 1000000000,
                       "callType": 0,
                       "logs": {
-                        "address": "erd14r7m6drneg69jyxvxxnrsss6x5gg2cqqwreyhdwanj0fcza0ynnq5jmy4g",
+                        "address": "moa1dp7pytgfmlqkctqftvsr5fqv9vem7u573y9cea3uw5ul79d5xeqsjvaj39",
                         "events": [
                           {
-                            "address": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
+                            "address": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
                             "identifier": "DCTTransfer",
                             "topics": [
                               "V0VHTEQtZDdjNmJi",
@@ -271,7 +271,7 @@ mod tests {
                             "data": null
                           },
                           {
-                            "address": "erd14r7m6drneg69jyxvxxnrsss6x5gg2cqqwreyhdwanj0fcza0ynnq5jmy4g",
+                            "address": "moa1dp7pytgfmlqkctqftvsr5fqv9vem7u573y9cea3uw5ul79d5xeqsjvaj39",
                             "identifier": "writeLog",
                             "topics": [
                               "AAAAAAAAAAAFAKVe/p1dXpaw/INtyTPaxf3N3LaNfOs="
@@ -279,7 +279,7 @@ mod tests {
                             "data": "QDZmNmI="
                           },
                           {
-                            "address": "erd14r7m6drneg69jyxvxxnrsss6x5gg2cqqwreyhdwanj0fcza0ynnq5jmy4g",
+                            "address": "moa1dp7pytgfmlqkctqftvsr5fqv9vem7u573y9cea3uw5ul79d5xeqsjvaj39",
                             "identifier": "completedTxEvent",
                             "topics": [
                               "1AWL08E9sLFIMsfFj+Fj2y9Xn/ZUQ4BYa4on2ItKUHA="
@@ -300,8 +300,8 @@ mod tests {
                       "hash": "b7b4d15917fd215399d8e772c3c4e732008baaedc2b8172f71c91708ba7523f0",
                       "nonce": 31,
                       "value": 102028510000000,
-                      "receiver": "erd14r7m6drneg69jyxvxxnrsss6x5gg2cqqwreyhdwanj0fcza0ynnq5jmy4g",
-                      "sender": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
+                      "receiver": "moa1dp7pytgfmlqkctqftvsr5fqv9vem7u573y9cea3uw5ul79d5xeqsjvaj39",
+                      "sender": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
                       "data": "@6f6b@0000000c574d4f41582d64376336626200000000000000000000000803856446ff9a304b@10",
                       "prevTxHash": "d4058bd3c13db0b14832c7c58fe163db2f579ff6544380586b8a27d88b4a5070",
                       "originalTxHash": "d4058bd3c13db0b14832c7c58fe163db2f579ff6544380586b8a27d88b4a5070",
@@ -309,10 +309,10 @@ mod tests {
                       "gasPrice": 1000000000,
                       "callType": 0,
                       "logs": {
-                        "address": "erd14r7m6drneg69jyxvxxnrsss6x5gg2cqqwreyhdwanj0fcza0ynnq5jmy4g",
+                        "address": "moa1dp7pytgfmlqkctqftvsr5fqv9vem7u573y9cea3uw5ul79d5xeqsjvaj39",
                         "events": [
                           {
-                            "address": "erd14r7m6drneg69jyxvxxnrsss6x5gg2cqqwreyhdwanj0fcza0ynnq5jmy4g",
+                            "address": "moa1dp7pytgfmlqkctqftvsr5fqv9vem7u573y9cea3uw5ul79d5xeqsjvaj39",
                             "identifier": "completedTxEvent",
                             "topics": [
                               "1AWL08E9sLFIMsfFj+Fj2y9Xn/ZUQ4BYa4on2ItKUHA="
@@ -328,8 +328,8 @@ mod tests {
                       "hash": "05a766ca05d2053d1c0fbeb1797116474a06c86402a3bfd6c132c9a24cfa1bb0",
                       "nonce": 0,
                       "value": 0,
-                      "receiver": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
-                      "sender": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
+                      "receiver": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
+                      "sender": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
                       "data": "swapTokensFixedInput@574d4f41582d643763366262@037c778fcce9c55b",
                       "prevTxHash": "d4058bd3c13db0b14832c7c58fe163db2f579ff6544380586b8a27d88b4a5070",
                       "originalTxHash": "d4058bd3c13db0b14832c7c58fe163db2f579ff6544380586b8a27d88b4a5070",
@@ -343,8 +343,8 @@ mod tests {
                       "hash": "4e639c80822d5d7780c8326d683fa9cd6d59649d14122dfabc5a96dda36da527",
                       "nonce": 0,
                       "value": 0,
-                      "receiver": "erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy",
-                      "sender": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
+                      "receiver": "moa1qqqqqqqqqqqqqpgquu5rsa4ee664azz6vfu4h3e8z4p6ft8m0n4sszth6l",
+                      "sender": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
                       "data": "DCTTransfer@574d4f41582d643763366262@e7730d1ef1b0@737761704e6f466565416e64466f7277617264@4d45582d646332383963@0000000000000000000000000000000000000000000000000000000000000000",
                       "prevTxHash": "d4058bd3c13db0b14832c7c58fe163db2f579ff6544380586b8a27d88b4a5070",
                       "originalTxHash": "d4058bd3c13db0b14832c7c58fe163db2f579ff6544380586b8a27d88b4a5070",
@@ -362,10 +362,10 @@ mod tests {
                     }
                   ],
                   "logs": {
-                    "address": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
+                    "address": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
                     "events": [
                       {
-                        "address": "erd14r7m6drneg69jyxvxxnrsss6x5gg2cqqwreyhdwanj0fcza0ynnq5jmy4g",
+                        "address": "moa1dp7pytgfmlqkctqftvsr5fqv9vem7u573y9cea3uw5ul79d5xeqsjvaj39",
                         "identifier": "DCTTransfer",
                         "topics": [
                           "SFRNLWZlMWY2OQ==",
@@ -376,7 +376,7 @@ mod tests {
                         "data": null
                       },
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
+                        "address": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
                         "identifier": "DCTTransfer",
                         "topics": [
                           "V0VHTEQtZDdjNmJi",
@@ -387,7 +387,7 @@ mod tests {
                         "data": null
                       },
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy",
+                        "address": "moa1qqqqqqqqqqqqqpgquu5rsa4ee664azz6vfu4h3e8z4p6ft8m0n4sszth6l",
                         "identifier": "DCTLocalBurn",
                         "topics": [
                           "TUVYLWRjMjg5Yw==",
@@ -397,7 +397,7 @@ mod tests {
                         "data": null
                       },
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy",
+                        "address": "moa1qqqqqqqqqqqqqpgquu5rsa4ee664azz6vfu4h3e8z4p6ft8m0n4sszth6l",
                         "identifier": "swapNoFeeAndForward",
                         "topics": [
                           "c3dhcF9ub19mZWVfYW5kX2ZvcndhcmQ=",
@@ -408,7 +408,7 @@ mod tests {
                         "data": "AAAAAAAAAAAFAKVe/p1dXpaw/INtyTPaxf3N3LaNfOsAAAAMV0VHTEQtZDdjNmJiAAAABudzDR7xsAAAAApNRVgtZGMyODljAAAACQLjAz6tY8tN8QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABzvkcAAAAAAAAYvQAAAABk/khy"
                       },
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
+                        "address": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
                         "identifier": "DCTTransfer",
                         "topics": [
                           "V0VHTEQtZDdjNmJi",
@@ -419,7 +419,7 @@ mod tests {
                         "data": null
                       },
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4s9s77kz",
+                        "address": "moa1qqqqqqqqqqqqqpgq5400a82at6ttplyrdhyn8kk9lhxaed5d0n4sggc32j",
                         "identifier": "swapTokensFixedInput",
                         "topics": [
                           "c3dhcA==",
@@ -485,7 +485,7 @@ mod tests {
                   "epoch": 6257,
                   "value": "0",
                   "receiver": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
-                  "sender": "erd1uh67c2lkhyj4vh73akv7jky9sfgvus8awwcj64uju69mmfne5u7q299t7g",
+                  "sender": "moa1uh67c2lkhyj4vc737kv7jkygsfgvus8awwcj6huju69mmfne5u7qtffxsf",
                   "gasPrice": 1000000000,
                   "gasLimit": 600000000,
                   "gasUsed": 600000000,
@@ -572,8 +572,8 @@ mod tests {
                   "round": 7646960,
                   "epoch": 6339,
                   "value": "0",
-                  "receiver": "erd1qqqqqqqqqqqqqpgqshqmekudxlxwp0d9j368etjamr5dw7k45u7qx40w6h",
-                  "sender": "erd1uh67c2lkhyj4vh73akv7jky9sfgvus8awwcj64uju69mmfne5u7q299t7g",
+                  "receiver": "moa1qqqqqqqqqqqqqpgqscqmekudxlxwp0d9j368etjamr5dw7k45u7qnz0ex6",
+                  "sender": "moa1uh67c2lkhyj4vc737kv7jkygsfgvus8awwcj6huju69mmfne5u7qtffxsf",
                   "gasPrice": 1000000000,
                   "gasLimit": 600000000,
                   "gasUsed": 600000000,
@@ -593,10 +593,10 @@ mod tests {
                   "hyperblockHash": "12df3fe65cacde2c9742b9506ac2261d34f3c72d690301192fd8016430d51913",
                   "timestamp": 1694433360,
                   "logs": {
-                    "address": "erd1qqqqqqqqqqqqqpgqshqmekudxlxwp0d9j368etjamr5dw7k45u7qx40w6h",
+                    "address": "moa1qqqqqqqqqqqqqpgqscqmekudxlxwp0d9j368etjamr5dw7k45u7qnz0ex6",
                     "events": [
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgqshqmekudxlxwp0d9j368etjamr5dw7k45u7qx40w6h",
+                        "address": "moa1qqqqqqqqqqqqqpgqscqmekudxlxwp0d9j368etjamr5dw7k45u7qnz0ex6",
                         "identifier": "writeLog",
                         "topics": [
                           "5fXsK/a5JVZf0e2Z6ViFglDOQP1zsS1XkuaLvaZ5pzw=",
@@ -605,7 +605,7 @@ mod tests {
                         "data": "QDZmNmJAMGFAMDIxODcxMWEwMA=="
                       },
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgqshqmekudxlxwp0d9j368etjamr5dw7k45u7qx40w6h",
+                        "address": "moa1qqqqqqqqqqqqqpgqscqmekudxlxwp0d9j368etjamr5dw7k45u7qnz0ex6",
                         "identifier": "completedTxEvent",
                         "topics": [
                           "6RSFfxv9ADukEbrjciZnA+X3BvpBLDeP6zf6peGMPXM="
@@ -660,8 +660,8 @@ mod tests {
                   "round": 7647523,
                   "epoch": 6340,
                   "value": "0",
-                  "receiver": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
-                  "sender": "erd1uh67c2lkhyj4vh73akv7jky9sfgvus8awwcj64uju69mmfne5u7q299t7g",
+                  "receiver": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
+                  "sender": "moa1uh67c2lkhyj4vc737kv7jkygsfgvus8awwcj6huju69mmfne5u7qtffxsf",
                   "gasPrice": 1000000000,
                   "gasLimit": 600000000,
                   "gasUsed": 600000000,
@@ -685,7 +685,7 @@ mod tests {
                       "hash": "462b56a1530e6070dc7c15f755e51a97a6972c8cd7891f3be4635b93211890c5",
                       "nonce": 0,
                       "value": 0,
-                      "receiver": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                      "receiver": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                       "sender": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
                       "data": "@00@0a@0218711a00",
                       "prevTxHash": "41d56fdacf3e14de67e821427c732b62ebfa07c82d2e5db6de75fe3a1c828d9b",
@@ -694,10 +694,10 @@ mod tests {
                       "gasPrice": 1000000000,
                       "callType": 2,
                       "logs": {
-                        "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                        "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                         "events": [
                           {
-                            "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                            "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                             "identifier": "writeLog",
                             "topics": [
                               "AAAAAAAAAAAFAP/Aj4ZNGKlpx2+xeJLdoJbREzb20P0=",
@@ -706,7 +706,7 @@ mod tests {
                             "data": "QDZmNmI="
                           },
                           {
-                            "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                            "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                             "identifier": "completedTxEvent",
                             "topics": [
                               "QdVv2s8+FN5n6CFCfHMrYuv6B8gtLl223nX+OhyCjZs="
@@ -722,7 +722,7 @@ mod tests {
                       "nonce": 0,
                       "value": 0,
                       "receiver": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
-                      "sender": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                      "sender": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                       "data": "returnTwoU64@4f3c60",
                       "prevTxHash": "4d50a055663dfee2479851684d7fb83cf00695b6f03f4dbbdf0f9232477cafc4",
                       "originalTxHash": "4d50a055663dfee2479851684d7fb83cf00695b6f03f4dbbdf0f9232477cafc4",
@@ -734,10 +734,10 @@ mod tests {
                     }
                   ],
                   "logs": {
-                    "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                    "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                     "events": [
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                        "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                         "identifier": "writeLog",
                         "topics": [
                           "5fXsK/a5JVZf0e2Z6ViFglDOQP1zsS1XkuaLvaZ5pzw="
@@ -789,8 +789,8 @@ mod tests {
                   "round": 7647560,
                   "epoch": 6340,
                   "value": "0",
-                  "receiver": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
-                  "sender": "erd1uh67c2lkhyj4vh73akv7jky9sfgvus8awwcj64uju69mmfne5u7q299t7g",
+                  "receiver": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
+                  "sender": "moa1uh67c2lkhyj4vc737kv7jkygsfgvus8awwcj6huju69mmfne5u7qtffxsf",
                   "gasPrice": 1000000000,
                   "gasLimit": 600000000,
                   "gasUsed": 600000000,
@@ -815,7 +815,7 @@ mod tests {
                       "nonce": 0,
                       "value": 0,
                       "receiver": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
-                      "sender": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                      "sender": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                       "data": "returnTwoU64@4f3c60",
                       "prevTxHash": "4f7f19e448176e4d47a0f844cbd6bdb1b6c68035dafe927e8249ed60af1c3b17",
                       "originalTxHash": "4f7f19e448176e4d47a0f844cbd6bdb1b6c68035dafe927e8249ed60af1c3b17",
@@ -829,7 +829,7 @@ mod tests {
                       "hash": "948dc6702b376d1e043db8de2f87ca12907c342f54cfad7dfebadf59145ca3ac",
                       "nonce": 0,
                       "value": 0,
-                      "receiver": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                      "receiver": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                       "sender": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
                       "data": "@00@0a@0218711a00",
                       "prevTxHash": "fe7474188d5ca4b84c7577f03fc778d22d53c070dfcb05a9cda840229d30e4d3",
@@ -838,10 +838,10 @@ mod tests {
                       "gasPrice": 1000000000,
                       "callType": 2,
                       "logs": {
-                        "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                        "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                         "events": [
                           {
-                            "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                            "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                             "identifier": "writeLog",
                             "topics": [
                               "AAAAAAAAAAAFAP/Aj4ZNGKlpx2+xeJLdoJbREzb20P0=",
@@ -850,7 +850,7 @@ mod tests {
                             "data": "QDZmNmJAMGFAMDIxODcxMWEwMA=="
                           },
                           {
-                            "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                            "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                             "identifier": "completedTxEvent",
                             "topics": [
                               "/nR0GI1cpLhMdXfwP8d40i1TwHDfywWpzahAIp0w5NM="
@@ -863,10 +863,10 @@ mod tests {
                     }
                   ],
                   "logs": {
-                    "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                    "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                     "events": [
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                        "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                         "identifier": "writeLog",
                         "topics": [
                           "5fXsK/a5JVZf0e2Z6ViFglDOQP1zsS1XkuaLvaZ5pzw="
@@ -918,8 +918,8 @@ mod tests {
                   "round": 7647583,
                   "epoch": 6340,
                   "value": "0",
-                  "receiver": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
-                  "sender": "erd1uh67c2lkhyj4vh73akv7jky9sfgvus8awwcj64uju69mmfne5u7q299t7g",
+                  "receiver": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
+                  "sender": "moa1uh67c2lkhyj4vc737kv7jkygsfgvus8awwcj6huju69mmfne5u7qtffxsf",
                   "gasPrice": 1000000000,
                   "gasLimit": 600000000,
                   "gasUsed": 600000000,
@@ -944,7 +944,7 @@ mod tests {
                       "nonce": 0,
                       "value": 0,
                       "receiver": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
-                      "sender": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                      "sender": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                       "data": "returnTwoU64@4f3c60",
                       "prevTxHash": "f34e136ca81c0e32f6fb532b753612715675073f3718b5db009bb275d246fd7a",
                       "originalTxHash": "f34e136ca81c0e32f6fb532b753612715675073f3718b5db009bb275d246fd7a",
@@ -958,7 +958,7 @@ mod tests {
                       "hash": "bc31cb153ae615204625df84fe9ae3a159aa412b7342f3dca958dd5517a08197",
                       "nonce": 0,
                       "value": 0,
-                      "receiver": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                      "receiver": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                       "sender": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
                       "data": "@00@0a@0218711a00",
                       "prevTxHash": "065291164a8acd27c26b5a8f09664810081fda18cd54fca635196cf9b200297a",
@@ -967,10 +967,10 @@ mod tests {
                       "gasPrice": 1000000000,
                       "callType": 2,
                       "logs": {
-                        "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                        "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                         "events": [
                           {
-                            "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                            "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                             "identifier": "writeLog",
                             "topics": [
                               "AAAAAAAAAAAFAP/Aj4ZNGKlpx2+xeJLdoJbREzb20P0=",
@@ -979,7 +979,7 @@ mod tests {
                             "data": "QDZmNmJAMGFAMDIxODcxMWEwMA=="
                           },
                           {
-                            "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                            "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                             "identifier": "completedTxEvent",
                             "topics": [
                               "BlKRFkqKzSfCa1qPCWZIEAgf2hjNVPymNRls+bIAKXo="
@@ -992,10 +992,10 @@ mod tests {
                     }
                   ],
                   "logs": {
-                    "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                    "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                     "events": [
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgqllqglpjdrz5kn3m0k9uf9hdqjmg3xdhk6r7se3wvlk",
+                        "address": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                         "identifier": "writeLog",
                         "topics": [
                           "5fXsK/a5JVZf0e2Z6ViFglDOQP1zsS1XkuaLvaZ5pzw="

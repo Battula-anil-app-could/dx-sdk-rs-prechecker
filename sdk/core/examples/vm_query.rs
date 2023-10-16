@@ -14,7 +14,7 @@ async fn main() {
     let blockchain = CommunicationProxy::new(DEVNET_GATEWAY.to_string());
     let req = VmValueRequest {
         sc_address: Address::from_bech32_string(
-            "erd1qqqqqqqqqqqqqpgqhn3ae8dpc957t7jadn7kywtg503dy7pnj9ts3umqxx",
+            "moa1qqqqqqqqqqqqqpgqhn3ae8dpc957t7jadn7kywtg503dy7pnj9tsuya06k",
         )
         .unwrap(),
         func_name: "get".to_string(),

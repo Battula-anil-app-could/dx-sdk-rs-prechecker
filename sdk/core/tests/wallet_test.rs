@@ -4,21 +4,21 @@ use dharitri_sdk::{crypto::public_key::PublicKey, data::address::Address, wallet
 
 #[test]
 fn test_private_key_from_mnemonic() {
-    let mnemonic: Mnemonic = Mnemonic::parse_normalized("acid twice post genre topic observe apple viable gesture fortune funny dawn around blood enemy page update reduce decline van bundle zebra rookie real").unwrap();
+    let mnemonic: Mnemonic = Mnemonic::parse_normalized("era office option undo phone pioneer siege yard pear jelly asthma various above script disorder solid swarm odor style caught absurd canal vacant prize").unwrap();
 
     let private_key = Wallet::get_private_key_from_mnemonic(mnemonic.clone(), 0, 0);
     let public_key = PublicKey::from(&private_key);
     let address = Address::from(&public_key);
     assert_eq!(
-        "c6ecd5ee6ae3ed006d3033093d6c3ca1d28566fc87beaad387ab67bb2b259057",
+        "15caac44800bab243fb52c4bbd0eaf787b0a0a14a762ce42c0ad680336422ecd",
         private_key.to_string()
     );
     assert_eq!(
-        "1e152cda4a8babddb6750c6ba48b3849719d9453ab323b89d75ba7b85b1ef431",
+        "e7d1c74453c9b0ee476836e6a4e84ed3b9af0f0ccba4455a77354b64d0dded86",
         public_key.to_string()
     );
     assert_eq!(
-        "moa1rc2jekj23w4amdn4p346fzecf9cem9zn4verhzwhtwnmskc77scsjt74t7",
+        "moa1ulguw3znexcwu3mgxmn2f6zw6wu67rcvewjy2knhx49kf5xaakrqqvjkw3",
         address.to_string()
     );
 
@@ -26,15 +26,15 @@ fn test_private_key_from_mnemonic() {
     let public_key = PublicKey::from(&private_key);
     let address = Address::from(&public_key);
     assert_eq!(
-        "db6140e6f0854ad8a0b10b3e50e94fb1259b60bb0d7c2665d597eb1970f7a3a9",
+        "a12a98640e0a411a4580c7dee7952bf30de01d50ffffaa34d9496424cbb90f1a",
         private_key.to_string()
     );
     assert_eq!(
-        "413885ecb0b058f51db1362568a6d156c4fa6d310debf2cfaa94365ab93d9f74",
+        "6b5fb3590d2f4afc199843fa7ba700f17c9cba7c8cca1da67087465905ef7560",
         public_key.to_string()
     );
     assert_eq!(
-        "moa1gyugtm9skpv028d3xcjk3fk32mz05mf3ph4l9na2jsm94wfana6qt9gfd5",
+        "moa1dd0mxkgd9a90cxvcg0a8hfcq797fewnu3n9pmfnssar9jp00w4sq7d7ln5",
         address.to_string()
     );
 }
@@ -46,6 +46,6 @@ fn test_load_from_pem() {
     let addr = wallet.address();
     assert_eq!(
         addr.to_bech32_string().unwrap(),
-        "moa1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssfq94h8"
+        "moa17v5720m50jdvc046kvk5gydhlspvlpc5hqs63km9nxzgksw2kzxq3gdz89"
     );
 }

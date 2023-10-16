@@ -105,14 +105,15 @@ impl Wallet {
     }
 
     pub fn from_pem_file_contents(contents: String) -> Result<Self> {
-        eprintln!("Contents: {:?}", contents);
+        //eprintln!("Contents: {:?}", contents);
         let x = pem::parse(contents.clone())?;
-        eprintln!("x is s{:?}", x);
+        //eprintln!("x is s{dharitri-sc-scenario:?}", x);
         let x = x.contents[..PRIVATE_KEY_LENGTH].to_vec();
-       
+        //eprintln!("xVc is s{:?}", x);
         let priv_key_str = std::str::from_utf8(x.as_slice())?;
-        eprintln!("{:?}", priv_key_str);
+        //eprintln!("private key str{:?}", priv_key_str);
         let pri_key = PrivateKey::from_hex_str(priv_key_str)?;
+        //eprintln!("pri_key{:?}", pri_key);
         Ok(Self { priv_key: pri_key })
     }
 
