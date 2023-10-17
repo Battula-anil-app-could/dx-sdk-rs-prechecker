@@ -484,7 +484,7 @@ mod tests {
                   "round": 7548071,
                   "epoch": 6257,
                   "value": "0",
-                  "receiver": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
+                  "receiver": "moa1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qwmhska",
                   "sender": "moa1uh67c2lkhyj4vc737kv7jkygsfgvus8awwcj6huju69mmfne5u7qtffxsf",
                   "gasPrice": 1000000000,
                   "gasLimit": 600000000,
@@ -505,10 +505,10 @@ mod tests {
                   "hyperblockHash": "8410309ec5b988af79b4dcfb44fd4729d46874ebd796672c78e417e314409051",
                   "timestamp": 1693840026,
                   "logs": {
-                    "address": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
+                    "address": "moa1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qwmhska",
                     "events": [
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
+                        "address": "moa1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qwmhska",
                         "identifier": "writeLog",
                         "topics": [
                           "5fXsK/a5JVZf0e2Z6ViFglDOQP1zsS1XkuaLvaZ5pzw=",
@@ -517,7 +517,7 @@ mod tests {
                         "data": "QDZmNmJAMGFAMDIxODcxMWEwMA=="
                       },
                       {
-                        "address": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
+                        "address": "moa1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qwmhska",
                         "identifier": "completedTxEvent",
                         "topics": [
                           "avrD7BPInMVhVNBu/bRXok9YNhaZ7uAKSCAqj4rcjIo="
@@ -686,7 +686,7 @@ mod tests {
                       "nonce": 0,
                       "value": 0,
                       "receiver": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
-                      "sender": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
+                      "sender": "moa1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qwmhska",
                       "data": "@00@0a@0218711a00",
                       "prevTxHash": "41d56fdacf3e14de67e821427c732b62ebfa07c82d2e5db6de75fe3a1c828d9b",
                       "originalTxHash": "4d50a055663dfee2479851684d7fb83cf00695b6f03f4dbbdf0f9232477cafc4",
@@ -721,7 +721,7 @@ mod tests {
                       "hash": "41d56fdacf3e14de67e821427c732b62ebfa07c82d2e5db6de75fe3a1c828d9b",
                       "nonce": 0,
                       "value": 0,
-                      "receiver": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
+                      "receiver": "moa1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qwmhska",
                       "sender": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                       "data": "returnTwoU64@4f3c60",
                       "prevTxHash": "4d50a055663dfee2479851684d7fb83cf00695b6f03f4dbbdf0f9232477cafc4",
@@ -814,7 +814,7 @@ mod tests {
                       "hash": "fe7474188d5ca4b84c7577f03fc778d22d53c070dfcb05a9cda840229d30e4d3",
                       "nonce": 0,
                       "value": 0,
-                      "receiver": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
+                      "receiver": "moa1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qwmhska",
                       "sender": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                       "data": "returnTwoU64@4f3c60",
                       "prevTxHash": "4f7f19e448176e4d47a0f844cbd6bdb1b6c68035dafe927e8249ed60af1c3b17",
@@ -830,7 +830,7 @@ mod tests {
                       "nonce": 0,
                       "value": 0,
                       "receiver": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
-                      "sender": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
+                      "sender": "moa1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qwmhska",
                       "data": "@00@0a@0218711a00",
                       "prevTxHash": "fe7474188d5ca4b84c7577f03fc778d22d53c070dfcb05a9cda840229d30e4d3",
                       "originalTxHash": "4f7f19e448176e4d47a0f844cbd6bdb1b6c68035dafe927e8249ed60af1c3b17",
@@ -943,7 +943,7 @@ mod tests {
                       "hash": "065291164a8acd27c26b5a8f09664810081fda18cd54fca635196cf9b200297a",
                       "nonce": 0,
                       "value": 0,
-                      "receiver": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
+                      "receiver": "moa1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qwmhska",
                       "sender": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
                       "data": "returnTwoU64@4f3c60",
                       "prevTxHash": "f34e136ca81c0e32f6fb532b753612715675073f3718b5db009bb275d246fd7a",
@@ -959,7 +959,7 @@ mod tests {
                       "nonce": 0,
                       "value": 0,
                       "receiver": "moa1qqqqqqqqqqqqqpgqllqglpjdrz0u83mek9uglhdqjmg3xdhk6r7shecp5v",
-                      "sender": "erd1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qrr3l2d",
+                      "sender": "moa1qqqqqqqqqqqqqpgq4nlkk7jwhqgp4r08lal46tqt70jdv0685u7qwmhska",
                       "data": "@00@0a@0218711a00",
                       "prevTxHash": "065291164a8acd27c26b5a8f09664810081fda18cd54fca635196cf9b200297a",
                       "originalTxHash": "f34e136ca81c0e32f6fb532b753612715675073f3718b5db009bb275d246fd7a",
