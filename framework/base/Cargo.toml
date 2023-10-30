@@ -35,6 +35,6 @@ version = "=0.0.2"
 path = "../derive"
 
 [dependencies.dharitri-sc-codec]
-version = "=0.17.1"
+version = "=0.0.2"
 path = "../codec"
 features = ["derive"]
