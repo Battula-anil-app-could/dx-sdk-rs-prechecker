@@ -1,5 +1,3 @@
-#![allow(clippy::bad_bit_mask)]
-
 use crate::{
     abi::{TypeAbi, TypeName},
     codec::*,

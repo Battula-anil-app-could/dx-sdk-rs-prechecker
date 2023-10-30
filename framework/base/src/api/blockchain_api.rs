@@ -1,7 +1,7 @@
-use super::{HandleTypeInfo, ManagedTypeApi, ManagedTypeApiImpl, RawHandle};
+use super::{HandleTypeInfo, ManagedTypeApi, ManagedTypeApiImpl};
 use crate::types::{
     heap::{Address, Box, H256},
-    DctLocalRoleFlags,
+    DctLocalRoleFlags, DctTokenData, ManagedAddress, TokenIdentifier,
 };
 
 pub trait BlockchainApi: ManagedTypeApi {
@@ -35,7 +35,11 @@ pub trait BlockchainApiImpl: ManagedTypeApiImpl {
         self.mb_overwrite(dest, self.get_sc_address_legacy().as_bytes())
     }
 
-    fn load_owner_address_managed(&self, dest: Self::ManagedBufferHandle);
+    fn get_owner_address_legacy(&self) -> Address;
+
+    fn load_owner_address_managed(&self, dest: Self::ManagedBufferHandle) {
+        self.mb_overwrite(dest, self.get_owner_address_legacy().as_bytes())
+    }
 
     fn get_shard_of_address_legacy(&self, address: &Address) -> u32;
 
@@ -61,7 +65,11 @@ pub trait BlockchainApiImpl: ManagedTypeApiImpl {
         self.load_balance_legacy(dest, &address);
     }
 
-    fn load_state_root_hash_managed(&self, dest: Self::ManagedBufferHandle);
+    fn get_state_root_hash_legacy(&self) -> H256;
+
+    fn load_state_root_hash_managed(&self, dest: Self::ManagedBufferHandle) {
+        self.mb_overwrite(dest, self.get_state_root_hash_legacy().as_bytes());
+    }
 
     fn get_tx_hash_legacy(&self) -> H256;
 
@@ -79,7 +87,11 @@ pub trait BlockchainApiImpl: ManagedTypeApiImpl {
 
     fn get_block_epoch(&self) -> u64;
 
-    fn load_block_random_seed_managed(&self, dest: Self::ManagedBufferHandle);
+    fn get_block_random_seed_legacy(&self) -> Box<[u8; 48]>;
+
+    fn load_block_random_seed_managed(&self, dest: Self::ManagedBufferHandle) {
+        self.mb_overwrite(dest, self.get_block_random_seed_legacy().as_slice());
+    }
 
     fn get_prev_block_timestamp(&self) -> u64;
 
@@ -109,21 +121,23 @@ pub trait BlockchainApiImpl: ManagedTypeApiImpl {
         dest: Self::BigIntHandle,
     );
 
-    #[allow(clippy::too_many_arguments)]
-    fn managed_get_dct_token_data(
+    fn load_dct_token_data<M: ManagedTypeApi>(
         &self,
-        address_handle: RawHandle,
-        token_id_handle: RawHandle,
+        address: &ManagedAddress<M>,
+        token_id: &TokenIdentifier<M>,
         nonce: u64,
-        value_handle: RawHandle,
-        properties_handle: RawHandle,
-        hash_handle: RawHandle,
-        name_handle: RawHandle,
-        attributes_handle: RawHandle,
-        creator_handle: RawHandle,
-        royalties_handle: RawHandle,
-        uris_handle: RawHandle,
-    );
+    ) -> DctTokenData<M>;
+
+    #[deprecated(
+        since = "0.31.0",
+        note = "Only used for limited backwards compatibility tests. Never use! Use `load_dct_token_data` instead."
+    )]
+    fn load_dct_token_data_unmanaged<M: ManagedTypeApi>(
+        &self,
+        address: &ManagedAddress<M>,
+        token_id: &TokenIdentifier<M>,
+        nonce: u64,
+    ) -> DctTokenData<M>;
 
     fn check_dct_frozen(
         &self,

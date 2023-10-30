@@ -10,10 +10,7 @@
 // Total number of exported functions:   6
 
 #![no_std]
-
-// Configuration that works with rustc < 1.73.0.
-// TODO: Recommended rustc version: 1.73.0 or newer.
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -21,12 +18,10 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     fractional_nfts
     (
-        init => init
-        claimRoyaltiesFromMarketplace => claim_royalties_from_marketplace
-        fractionalizeNFT => fractionalize_nft
-        unFractionalizeNFT => unfractionalize_nft
-        getFractionalToken => fractional_token
+        claimRoyaltiesFromMarketplace
+        fractionalizeNFT
+        unFractionalizeNFT
+        getFractionalToken
+        callBack
     )
 }
-
-dharitri_sc_wasm_adapter::async_callback! { fractional_nfts }

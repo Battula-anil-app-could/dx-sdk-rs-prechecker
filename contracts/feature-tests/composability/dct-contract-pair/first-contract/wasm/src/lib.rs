@@ -10,10 +10,7 @@
 // Total number of exported functions:   9
 
 #![no_std]
-
-// Configuration that works with rustc < 1.73.0.
-// TODO: Recommended rustc version: 1.73.0 or newer.
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -21,15 +18,14 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     first_contract
     (
-        init => init
-        transferToSecondContractFull => transfer_to_second_contract_full
-        transferToSecondContractHalf => transfer_to_second_contract_half
-        transferToSecondContractRejected => transfer_to_second_contract_rejected
-        transferToSecondContractRejectedWithTransferAndExecute => transfer_to_second_contract_rejected_with_transfer_and_execute
-        transferToSecondContractFullWithTransferAndExecute => transfer_to_second_contract_full_with_transfer_and_execute
-        getdctTokenName => get_contract_dct_token_identifier
-        getSecondContractAddress => get_second_contract_address
+        transferToSecondContractFull
+        transferToSecondContractHalf
+        transferToSecondContractRejected
+        transferToSecondContractRejectedWithTransferAndExecute
+        transferToSecondContractFullWithTransferAndExecute
+        getdctTokenName
+        getSecondContractAddress
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

@@ -1,5 +1,5 @@
-ALICE="~/dharitri-sdk/testwallets/latest/users/alice.pem"
-BOB="~/dharitri-sdk/testwallets/latest/users/bob.pem"
+ALICE="/home/dharitri/dharitri-sdk/testwallets/latest/users/alice.pem"
+BOB="/home/dharitri/dharitri-sdk/testwallets/latest/users/bob.pem"
 ADDRESS=$(mxpy data load --key=address-testnet-moax-dct-swap)
 DEPLOY_TRANSACTION=$(mxpy data load --key=deployTransaction-testnet)
 PROXY=https://testnet-gateway.dharitri.com
@@ -18,8 +18,8 @@ deploy() {
     --arguments ${WRAPPED_MOAX_TOKEN_ID} \
     --send --outfile="deploy-testnet.interaction.json" --proxy=${PROXY} --chain=${CHAIN_ID} || return
 
-    TRANSACTION=$(mxpy data parse --file="deploy-testnet.interaction.json" --expression="data['emittedTransactionHash']")
-    ADDRESS=$(mxpy data parse --file="deploy-testnet.interaction.json" --expression="data['contractAddress']")
+    TRANSACTION=$(mxpy data parse --file="deploy-testnet.interaction.json" --expression="data['emitted_tx']['hash']")
+    ADDRESS=$(mxpy data parse --file="deploy-testnet.interaction.json" --expression="data['emitted_tx']['address']")
 
     mxpy data store --key=address-testnet --value=${ADDRESS}
     mxpy data store --key=deployTransaction-testnet-moax-dct-swap --value=${TRANSACTION}
@@ -35,7 +35,7 @@ upgrade() {
 }
 
 issueWrappedMoax() {
-    local TOKEN_DISPLAY_NAME=0x5772617070656445676c64  # "WrappedMoax"
+    local TOKEN_DISPLAY_NAME=0x577261707065644d6f6178  # "WrappedMoax"
     local TOKEN_TICKER=0x574d4f4158  # "WMOAX"
     local INITIAL_SUPPLY=0x01 # 1
     local NR_DECIMALS=0x12 # 18
@@ -66,7 +66,7 @@ wrapMoaxBob() {
 }
 
 unwrapMoaxBob() {
-    local UNWRAP_MOAX_ENDPOINT=0x756e7772617045676c64 # "unwrapMoax"
+    local UNWRAP_MOAX_ENDPOINT=0x756e777261704d6f6178 # "unwrapMoax"
     local UNWRAP_AMOUNT=0x05
 
     getWrappedMoaxTokenIdentifier

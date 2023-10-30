@@ -3,20 +3,20 @@ use core::marker::PhantomData;
 use crate::{
     api::{
         const_handles, use_raw_handle, EndpointArgumentApi, EndpointArgumentApiImpl, ErrorApi,
-        HandleTypeInfo, ManagedBufferApiImpl, ManagedTypeApi, StaticVarApi, VMApi,
+        HandleTypeInfo, ManagedBufferApi, ManagedTypeApi, StaticVarApi, VMApi,
     },
     types::{ManagedArgBuffer, ManagedBuffer, ManagedType},
 };
 
 /// Replaces the EndpointArgumentApi inside a promises callback,
 /// and causes it to read arguments from the callback data instead of the regular tx input.
-#[derive(Clone, Default)]
+#[derive(Clone)]
 pub struct CallbackArgApiWrapper<A: VMApi> {
     _phantom: PhantomData<A>,
 }
 
 impl<A: VMApi> CallbackArgApiWrapper<A> {
-    pub fn new() -> Self {
+    pub(super) fn new() -> Self {
         CallbackArgApiWrapper {
             _phantom: PhantomData,
         }
@@ -34,8 +34,6 @@ where
     type BigFloatHandle = <A as HandleTypeInfo>::BigFloatHandle;
 
     type EllipticCurveHandle = <A as HandleTypeInfo>::EllipticCurveHandle;
-
-    type ManagedMapHandle = <A as HandleTypeInfo>::ManagedMapHandle;
 }
 
 impl<A: VMApi> ErrorApi for CallbackArgApiWrapper<A> {

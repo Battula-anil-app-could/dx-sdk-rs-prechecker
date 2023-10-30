@@ -9,11 +9,11 @@ fn world() -> ScenarioWorld {
 }
 
 #[test]
-fn map_repeat_rs() {
-    world().run("scenarios/map_repeat.scen.json");
+fn map_repeat_struct_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/map_repeat_struct.scen.json", world());
 }
 
 #[test]
-fn map_repeat_struct_rs() {
-    world().run("scenarios/map_repeat_struct.scen.json");
+fn map_repeat_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/map_repeat.scen.json", world());
 }

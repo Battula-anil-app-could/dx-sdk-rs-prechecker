@@ -1,17 +1,12 @@
 use crate::api::ErrorApi;
 
 use super::{
-    token_identifier_util::IDENTIFIER_MAX_LENGTH, BigFloatApiImpl, BigIntApiImpl,
-    EllipticCurveApiImpl, ManagedBufferApiImpl, ManagedMapApiImpl,
+    token_identifier_util::IDENTIFIER_MAX_LENGTH, BigFloatApi, BigIntApi, EllipticCurveApi,
+    ManagedBufferApi,
 };
 
 pub trait ManagedTypeApiImpl:
-    BigIntApiImpl
-    + BigFloatApiImpl
-    + EllipticCurveApiImpl
-    + ManagedBufferApiImpl
-    + ManagedMapApiImpl
-    + ErrorApi
+    BigIntApi + BigFloatApi + EllipticCurveApi + ManagedBufferApi + ErrorApi
 {
     fn mb_to_big_int_unsigned(
         &self,
@@ -60,9 +55,5 @@ pub trait ManagedTypeApiImpl:
         }
 
         super::token_identifier_util::validate_token_identifier(static_buffer_slice)
-    }
-
-    fn get_token_ticker_len(&self, token_id_len: usize) -> usize {
-        super::token_identifier_util::get_token_ticker_len(token_id_len)
     }
 }

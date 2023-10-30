@@ -110,35 +110,11 @@
         },
         {
             "step": "scCall",
-            "id": "format_message_i64---positive",
+            "id": "format_message_big_int---negative",
             "tx": {
                 "from": "address:an_account",
                 "to": "sc:msg-features",
-                "function": "format_message_i64",
-                "arguments": [
-                    "123456789"
-                ],
-                "gasLimit": "1,500,000",
-                "gasPrice": "0"
-            },
-            "expect": {
-                "out": [
-                    "str:i64: 123456789"
-                ],
-                "status": "0",
-                "message": "",
-                "logs": "*",
-                "gas": "*",
-                "refund": "*"
-            }
-        },
-        {
-            "step": "scCall",
-            "id": "format_message_i64---negative",
-            "tx": {
-                "from": "address:an_account",
-                "to": "sc:msg-features",
-                "function": "format_message_i64",
+                "function": "format_message_big_int",
                 "arguments": [
                     "-123456789"
                 ],
@@ -147,7 +123,7 @@
             },
             "expect": {
                 "out": [
-                    "str:i64: -123456789"
+                    "str:BigInt: -123456789"
                 ],
                 "status": "0",
                 "message": "",

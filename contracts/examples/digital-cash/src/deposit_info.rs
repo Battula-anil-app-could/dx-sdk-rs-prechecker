@@ -1,32 +1,15 @@
-dharitri_sc::imports!();
+use dharitri_sc::{
+    api::ManagedTypeApi,
+    types::{BigUint, MoaxOrDctTokenIdentifier, ManagedAddress},
+};
+
 dharitri_sc::derive_imports!();
 
 #[derive(NestedEncode, NestedDecode, TopEncode, TopDecode, TypeAbi)]
 pub struct DepositInfo<M: ManagedTypeApi> {
+    pub amount: BigUint<M>,
     pub depositor_address: ManagedAddress<M>,
-    pub dct_funds: ManagedVec<M, DctTokenPayment<M>>,
-    pub moax_funds: BigUint<M>,
-    pub valability: u64,
     pub expiration_round: u64,
-    pub fees: Fee<M>,
-}
-
-impl<M> DepositInfo<M>
-where
-    M: ManagedTypeApi,
-{
-    pub fn get_num_tokens(&self) -> usize {
-        let mut amount = self.dct_funds.len();
-        if self.moax_funds > 0 {
-            amount += 1;
-        }
-
-        amount
-    }
-}
-
-#[derive(NestedEncode, NestedDecode, TopEncode, TopDecode, TypeAbi)]
-pub struct Fee<M: ManagedTypeApi> {
-    pub num_token_to_transfer: usize,
-    pub value: MoaxOrDctTokenPayment<M>,
+    pub token_name: MoaxOrDctTokenIdentifier<M>,
+    pub nonce: u64,
 }

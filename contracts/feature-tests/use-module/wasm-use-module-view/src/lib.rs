@@ -10,22 +10,17 @@
 // Total number of exported functions:   4
 
 #![no_std]
-
-// Configuration that works with rustc < 1.73.0.
-// TODO: Recommended rustc version: 1.73.0 or newer.
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
 
-dharitri_sc_wasm_adapter::external_view_init! {}
-
 dharitri_sc_wasm_adapter::external_view_endpoints! {
     use_module
     (
-        external_view_mod_a => external_view_mod_a
-        external_view_mod_b => external_view_mod_b
+        external_view_mod_a
+        external_view_mod_b
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

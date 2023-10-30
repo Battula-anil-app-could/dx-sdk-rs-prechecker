@@ -8,11 +8,14 @@ publish = false
 [lib]
 path = "src/proxy-test-second.rs"
 
+[features]
+ei-unmanaged = ["dharitri-sc/ei-unmanaged"]
+
 [dependencies.dharitri-sc]
-version = "0.0.1"
+version = "0.0.2"
 path = "../../../../framework/base"
 features = ["alloc"]
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.0.1"
+version = "0.0.2"
 path = "../../../../framework/scenario"

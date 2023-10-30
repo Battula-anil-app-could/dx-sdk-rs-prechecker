@@ -5,9 +5,7 @@ use serde::{
 };
 use std::fmt;
 
-#[derive(Default)]
 pub enum CheckValueListRaw {
-    #[default]
     Unspecified,
     Star,
     CheckList(Vec<CheckBytesValueRaw>),
@@ -20,6 +18,12 @@ impl CheckValueListRaw {
 
     pub fn is_unspecified(&self) -> bool {
         matches!(self, CheckValueListRaw::Unspecified)
+    }
+}
+
+impl Default for CheckValueListRaw {
+    fn default() -> Self {
+        CheckValueListRaw::Unspecified
     }
 }
 

@@ -37,7 +37,13 @@ where
     }
 
     fn transfer_execute(self) {
-        self.basic.transfer_execute_dct(self.dct_payments);
+        match self.dct_payments.len() {
+            0 => self.basic.transfer_execute_moax(BigUint::zero()),
+            1 => self
+                .basic
+                .transfer_execute_single_dct(self.dct_payments.get(0)),
+            _ => self.basic.transfer_execute_multi_dct(self.dct_payments),
+        }
     }
 }
 

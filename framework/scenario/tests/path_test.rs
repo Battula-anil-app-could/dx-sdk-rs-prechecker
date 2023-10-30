@@ -6,10 +6,13 @@ fn world() -> ScenarioWorld {
 
 #[test]
 fn local_path_test() {
-    world().run("tests/scenarios-self/path_test.scen.json");
+    dharitri_sc_scenario::run_rs("tests/scenarios-self/path_test.scen.json", world());
 }
 
 #[test]
 fn nested_path_test() {
-    world().run("tests/scenarios-self/external_steps/external_path_test.scen.json");
+    dharitri_sc_scenario::run_rs(
+        "tests/scenarios-self/external_steps/external_path_test.scen.json",
+        world(),
+    );
 }

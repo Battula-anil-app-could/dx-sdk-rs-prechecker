@@ -1,28 +1,24 @@
-use num_bigint::BigUint;
+use crate::num_bigint::BigUint;
+use dharitri_sc::types::heap::Address;
 
-use crate::{
-    tx_execution::is_system_sc_address, tx_mock::TxPanic, types::VMAddress,
-    world_mock::DctInstanceMetadata,
-};
+use crate::{tx_mock::TxPanic, world_mock::DctInstanceMetadata};
 
 use super::TxCache;
 
 impl TxCache {
-    pub fn subtract_moax_balance(
-        &self,
-        address: &VMAddress,
-        call_value: &BigUint,
-    ) -> Result<(), TxPanic> {
+    pub fn subtract_moax_balance(&self, address: &Address, call_value: &BigUint) {
         self.with_account_mut(address, |account| {
             if call_value > &account.moax_balance {
-                return Err(TxPanic::vm_error("failed transfer (insufficient funds)"));
+                std::panic::panic_any(TxPanic {
+                    status: 10,
+                    message: "failed transfer (insufficient funds)".to_string(),
+                });
             }
             account.moax_balance -= call_value;
-            Ok(())
         })
     }
 
-    pub fn subtract_tx_gas(&self, address: &VMAddress, gas_limit: u64, gas_price: u64) {
+    pub fn subtract_tx_gas(&self, address: &Address, gas_limit: u64, gas_price: u64) {
         self.with_account_mut(address, |account| {
             let gas_cost = BigUint::from(gas_limit) * BigUint::from(gas_price);
             assert!(
@@ -33,44 +29,44 @@ impl TxCache {
         });
     }
 
-    pub fn increase_moax_balance(&self, address: &VMAddress, amount: &BigUint) {
+    pub fn increase_moax_balance(&self, address: &Address, amount: &BigUint) {
         self.with_account_mut(address, |account| {
             account.moax_balance += amount;
         });
     }
 
+    #[allow(clippy::redundant_closure)] // clippy is wrong here, `.unwrap_or_else(panic_insufficient_funds)` won't compile
     pub fn subtract_dct_balance(
         &self,
-        address: &VMAddress,
+        address: &Address,
         dct_token_identifier: &[u8],
         nonce: u64,
         value: &BigUint,
-    ) -> Result<DctInstanceMetadata, TxPanic> {
+    ) -> DctInstanceMetadata {
         self.with_account_mut(address, |account| {
             let dct_data_map = &mut account.dct;
             let dct_data = dct_data_map
                 .get_mut_by_identifier(dct_token_identifier)
-                .ok_or_else(err_insufficient_funds)?;
+                .unwrap_or_else(|| panic_insufficient_funds());
 
             let dct_instances = &mut dct_data.instances;
             let dct_instance = dct_instances
                 .get_mut_by_nonce(nonce)
-                .ok_or_else(err_insufficient_funds)?;
-
+                .unwrap_or_else(|| panic_insufficient_funds());
             let dct_balance = &mut dct_instance.balance;
             if &*dct_balance < value {
-                return Err(err_insufficient_funds());
+                panic_insufficient_funds();
             }
 
             *dct_balance -= value;
 
-            Ok(dct_instance.metadata.clone())
+            dct_instance.metadata.clone()
         })
     }
 
     pub fn increase_dct_balance(
         &self,
-        address: &VMAddress,
+        address: &Address,
         dct_token_identifier: &[u8],
         nonce: u64,
         value: &BigUint,
@@ -86,37 +82,23 @@ impl TxCache {
         });
     }
 
-    pub fn transfer_moax_balance(
-        &self,
-        from: &VMAddress,
-        to: &VMAddress,
-        value: &BigUint,
-    ) -> Result<(), TxPanic> {
-        if !is_system_sc_address(from) {
-            self.subtract_moax_balance(from, value)?;
-        }
-        if !is_system_sc_address(to) {
-            self.increase_moax_balance(to, value);
-        }
-        Ok(())
-    }
-
     pub fn transfer_dct_balance(
         &self,
-        from: &VMAddress,
-        to: &VMAddress,
+        from: &Address,
+        to: &Address,
         dct_token_identifier: &[u8],
         nonce: u64,
         value: &BigUint,
-    ) -> Result<(), TxPanic> {
-        if !is_system_sc_address(from) && !is_system_sc_address(to) {
-            let metadata = self.subtract_dct_balance(from, dct_token_identifier, nonce, value)?;
-            self.increase_dct_balance(to, dct_token_identifier, nonce, value, metadata);
-        }
-        Ok(())
+    ) {
+        let metadata = self.subtract_dct_balance(from, dct_token_identifier, nonce, value);
+
+        self.increase_dct_balance(to, dct_token_identifier, nonce, value, metadata);
     }
 }
 
-fn err_insufficient_funds() -> TxPanic {
-    TxPanic::vm_error("insufficient funds")
+fn panic_insufficient_funds() -> ! {
+    std::panic::panic_any(TxPanic {
+        status: 10,
+        message: "insufficient funds".to_string(),
+    });
 }

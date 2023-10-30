@@ -5,10 +5,7 @@ use serde::{
     Deserialize, Serialize,
 };
 use std::fmt;
-
-#[derive(Default)]
 pub enum CheckDctMapRaw {
-    #[default]
     Unspecified,
     Star,
     Equal(CheckDctMapContentsRaw),
@@ -21,6 +18,12 @@ impl CheckDctMapRaw {
 
     pub fn is_star(&self) -> bool {
         matches!(self, CheckDctMapRaw::Star)
+    }
+}
+
+impl Default for CheckDctMapRaw {
+    fn default() -> Self {
+        CheckDctMapRaw::Unspecified
     }
 }
 

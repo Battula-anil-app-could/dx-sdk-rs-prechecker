@@ -30,7 +30,8 @@ pub struct Wallet {
 impl Wallet {
     // GenerateMnemonic will generate a new mnemonic value using the bip39 implementation
     pub fn generate_mnemonic() -> Mnemonic {
-        Mnemonic::generate_in(Language::English, 24).unwrap()
+        let mut rng = rand::thread_rng();
+        Mnemonic::generate_in_with(&mut rng, Language::English, 24).unwrap()
     }
 
     fn seed_from_mnemonic(mnemonic: Mnemonic, password: &str) -> [u8; 64] {
@@ -99,21 +100,10 @@ impl Wallet {
     }
 
     pub fn from_pem_file(file_path: &str) -> Result<Self> {
-        let contents = std::fs::read_to_string(file_path).unwrap();
-        //eprintln!("{:?}", contents);
-        Self::from_pem_file_contents(contents)
-    }
-
-    pub fn from_pem_file_contents(contents: String) -> Result<Self> {
-        //eprintln!("Contents: {:?}", contents);
-        let x = pem::parse(contents.clone())?;
-        //eprintln!("x is s{dharitri-sc-scenario:?}", x);
+        let x = pem::parse(std::fs::read_to_string(file_path).unwrap())?;
         let x = x.contents[..PRIVATE_KEY_LENGTH].to_vec();
-        //eprintln!("xVc is s{:?}", x);
         let priv_key_str = std::str::from_utf8(x.as_slice())?;
-        //eprintln!("private key str{:?}", priv_key_str);
         let pri_key = PrivateKey::from_hex_str(priv_key_str)?;
-        //eprintln!("pri_key{:?}", pri_key);
         Ok(Self { priv_key: pri_key })
     }
 

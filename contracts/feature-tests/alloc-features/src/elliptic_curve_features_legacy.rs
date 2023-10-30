@@ -1,5 +1,3 @@
-#![allow(deprecated)]
-
 dharitri_sc::imports!();
 
 /// All elliptic curve functions provided by Arwen exposed here.

@@ -8,7 +8,7 @@ use super::HandleTypeInfo;
 pub struct InvalidSliceError;
 
 /// A raw bytes buffer managed by Arwen.
-pub trait ManagedBufferApiImpl: HandleTypeInfo {
+pub trait ManagedBufferApi: HandleTypeInfo {
     /// Requests a new handle from the VM. No longer used extensively.
     fn mb_new_empty(&self) -> Self::ManagedBufferHandle;
 
@@ -35,6 +35,8 @@ pub trait ManagedBufferApiImpl: HandleTypeInfo {
         slice_len: usize,
         dest_handle: Self::ManagedBufferHandle,
     ) -> Result<(), InvalidSliceError>;
+
+    fn mb_copy_to_slice_pad_right(&self, handle: Self::ManagedBufferHandle, destination: &mut [u8]);
 
     fn mb_overwrite(&self, handle: Self::ManagedBufferHandle, value: &[u8]);
 

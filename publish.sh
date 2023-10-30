@@ -42,26 +42,20 @@
 # `git tag -s -a vX.X.X -m 'very short description of the release'`
 # `git push origin vX.X.X`
 #
-# 10. Go to https://github.com/dharitri/mx-sdk-rs/tags
+# 10. Go to https://github.com/Dharitri-org/dx-sdk-rs/tags
 # Click on the new tag.
 # Click `Create release from tag`.
 # The title should be the released crates and versions, same as in the changelog and the commit message.
 # The description should be copied from CHANGELOG.md, as is.
 #
-# 11. Run `sc-meta all update`. This will update the `Cargo.lock` files.
+# 11. Create pull request on GitHub. The faster it gets merged in master, the better.
 #
-# 12. Create pull request on GitHub. The faster it gets merged in master, the better.
+# 12. (optional) Test the new framework on one of the contracts that are not in the same repo, e.g. DNS, DEX, etc.
 #
-# 13. (optional) Test the new framework on one of the contracts that are not in the same repo, e.g. DNS, DEX, etc.
+# 13. Post in Slack to `release-announcements`.
 #
-# 14. Post in Slack to `release-announcements`.
+# 14. Write a release announcement in Confluence.
 #
-# 15. Write a release announcement in Confluence.
-#
-
-cd vm
-cargo publish || return 1
-cd ..
 
 cd sdk/core
 cargo publish || return 1
@@ -71,11 +65,11 @@ cd sdk/scenario-format/
 cargo publish || return 1
 cd ../..
 
-cd data/codec-derive
+cd framework/codec-derive
 cargo publish || return 1
 cd ../..
 
-cd data/codec
+cd framework/codec
 cargo publish || return 1
 cd ../..
 
@@ -90,6 +84,11 @@ cd ../..
 cd framework/meta
 cargo publish || return 1
 cd ../..
+
+### depends on sc-meta and sc, but sc-scenario depends on it (at least for now)
+cd vm
+cargo publish || return 1
+cd ..
 
 cd framework/scenario
 cargo publish || return 1

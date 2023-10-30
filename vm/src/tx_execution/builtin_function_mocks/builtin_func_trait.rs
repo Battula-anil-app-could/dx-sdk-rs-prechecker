@@ -1,39 +1,21 @@
-use crate::{
-    tx_execution::BlockchainVMRef,
-    tx_mock::{BlockchainUpdate, TxCache, TxInput, TxResult, TxTokenTransfer},
-    types::VMAddress,
-};
+use dharitri_sc::types::Address;
+
+use crate::tx_mock::{BlockchainUpdate, TxCache, TxInput, TxResult, TxTokenTransfer};
 
 pub trait BuiltinFunction {
-    /// Function name corresponding the builtin function implementation.
-    ///
-    /// Currently not used.
     fn name(&self) -> &str;
 
-    /// Extracts data relating DCT transfers handled by the builtin function, if applicable.
     fn extract_dct_transfers(&self, tx_input: &TxInput) -> BuiltinFunctionDctTransferInfo {
         BuiltinFunctionDctTransferInfo::empty(tx_input)
     }
 
-    /// Executes builtin function for the givn `TxInput` and with access to the underlying contracts states via the `TxCache`.
-    ///
-    /// A few builtin functions (the ones transferring DCT) can also call the VM after they finish,
-    /// so they are given the extra reference to the VM and a lambda closure to execute on the VM
-    fn execute<F>(
-        &self,
-        tx_input: TxInput,
-        tx_cache: TxCache,
-        vm: &BlockchainVMRef,
-        lambda: F,
-    ) -> (TxResult, BlockchainUpdate)
-    where
-        F: FnOnce();
+    fn execute(&self, tx_input: TxInput, tx_cache: TxCache) -> (TxResult, BlockchainUpdate);
 }
 
 /// Contains a builtin function call DCT transfers (if any) and the real recipient of the transfer
 /// (can be different from the "to" field.)
 pub struct BuiltinFunctionDctTransferInfo {
-    pub real_recipient: VMAddress,
+    pub real_recipient: Address,
     pub transfers: Vec<TxTokenTransfer>,
 }
 

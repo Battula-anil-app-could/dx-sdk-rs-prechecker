@@ -1,8 +1,7 @@
 use crate::{
     abi::{TypeAbi, TypeName},
-    api::{ErrorApi, ErrorApiImpl, HandleConstraints, ManagedTypeApi, ManagedTypeApiImpl},
+    api::{HandleConstraints, ManagedTypeApi, ManagedTypeApiImpl},
     codec::*,
-    err_msg,
     formatter::{FormatByteReceiver, SCDisplay, SCLowerHex},
     types::{ManagedBuffer, ManagedType},
 };
@@ -16,7 +15,7 @@ use super::MoaxOrDctTokenIdentifier;
 /// Not yet implemented, but we might add additional restrictions when deserializing as argument.
 #[repr(transparent)]
 #[derive(Clone)]
-pub struct TokenIdentifier<M: ErrorApi + ManagedTypeApi> {
+pub struct TokenIdentifier<M: ManagedTypeApi> {
     buffer: ManagedBuffer<M>,
 }
 
@@ -64,14 +63,6 @@ impl<M: ManagedTypeApi> TokenIdentifier<M> {
 
     pub fn is_valid_dct_identifier(&self) -> bool {
         M::managed_type_impl().validate_token_identifier(self.buffer.handle.clone())
-    }
-
-    pub fn ticker(&self) -> ManagedBuffer<M> {
-        let token_id_len = self.buffer.len();
-        let ticker_len = M::managed_type_impl().get_token_ticker_len(token_id_len);
-        self.buffer
-            .copy_slice(0, ticker_len)
-            .unwrap_or_else(|| M::error_api_impl().signal_error(err_msg::BAD_TOKEN_TICKER_FORMAT))
     }
 }
 

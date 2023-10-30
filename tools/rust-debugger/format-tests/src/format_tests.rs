@@ -7,9 +7,10 @@ use dharitri_sc::{
         ManagedBuffer, ManagedByteArray, ManagedOption, ManagedType, ManagedVec, TokenIdentifier,
     },
 };
-use dharitri_sc_scenario::{
-    api::{DebugHandle, DebugApi},
+use dharitri_chain_vm::{
+    api::DebugHandle,
     num_bigint::{BigInt as RustBigInt, BigUint as RustBigUint},
+    DebugApi,
 };
 
 macro_rules! push {
@@ -151,7 +152,7 @@ fn main() {
     > = ManagedOption::some(managed_vec_of_addresses.clone());
     push!(to_check, managed_option_of_vec_of_addresses, "ManagedOption::some((1) { [0] = (32) 0x000000000000000000010000000000000000000000000000000000000002ffff })");
 
-    // 5. SC wasm - heap
+    // 5. Dharitri wasm - heap
     let heap_address: Address = managed_address.to_address();
     push!(
         to_check,

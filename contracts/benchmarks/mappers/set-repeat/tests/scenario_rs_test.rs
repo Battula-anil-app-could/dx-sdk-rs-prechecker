@@ -9,11 +9,11 @@ fn world() -> ScenarioWorld {
 }
 
 #[test]
-fn set_repeat_rs() {
-    world().run("scenarios/set_repeat.scen.json");
+fn set_repeat_struct_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/set_repeat_struct.scen.json", world());
 }
 
 #[test]
-fn set_repeat_struct_rs() {
-    world().run("scenarios/set_repeat_struct.scen.json");
+fn set_repeat_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/set_repeat.scen.json", world());
 }

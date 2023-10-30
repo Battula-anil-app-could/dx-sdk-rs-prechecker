@@ -11,10 +11,7 @@
 // Total number of exported functions:  11
 
 #![no_std]
-
-// Configuration that works with rustc < 1.73.0.
-// TODO: Recommended rustc version: 1.73.0 or newer.
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -22,17 +19,16 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     promises_features
     (
-        init => init
-        forward_promise_accept_funds => forward_promise_accept_funds
-        forward_promise_retrieve_funds => forward_promise_retrieve_funds
-        callback_data => callback_data
-        callback_data_at_index => callback_data_at_index
-        clear_callback_data => clear_callback_data
-        promise_raw_single_token => promise_raw_single_token
-        promise_raw_multi_transfer => promise_raw_multi_transfer
-        retrieve_funds_callback => retrieve_funds_callback
-        the_one_callback => the_one_callback
+        forward_promise_accept_funds
+        forward_promise_retrieve_funds
+        callback_data
+        callback_data_at_index
+        clear_callback_data
+        promise_raw_single_token
+        promise_raw_multi_transfer
+        retrieve_funds_callback
+        the_one_callback
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

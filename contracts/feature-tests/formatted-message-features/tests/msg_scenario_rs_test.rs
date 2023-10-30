@@ -14,10 +14,10 @@ fn world() -> ScenarioWorld {
 
 #[test]
 fn managed_error_message_rs() {
-    world().run("scenarios/managed_error_message.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/managed_error_message.scen.json", world());
 }
 
 #[test]
 fn sc_format_rs() {
-    world().run("scenarios/sc_format.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/sc_format.scen.json", world());
 }

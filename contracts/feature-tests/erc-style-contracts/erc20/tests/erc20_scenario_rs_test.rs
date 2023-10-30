@@ -9,286 +9,380 @@ fn world() -> ScenarioWorld {
 }
 
 #[test]
-fn allowance_caller_caller_rs() {
-    world().run("scenarios/allowance_CallerCaller.scen.json");
+fn allowance_callercaller_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/allowance_CallerCaller.scen.json", world());
 }
 
 #[test]
-fn allowance_caller_other_rs() {
-    world().run("scenarios/allowance_CallerOther.scen.json");
+fn allowance_callerother_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/allowance_CallerOther.scen.json", world());
 }
 
 #[test]
-fn allowance_other_caller_rs() {
-    world().run("scenarios/allowance_OtherCaller.scen.json");
+fn allowance_othercaller_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/allowance_OtherCaller.scen.json", world());
 }
 
 #[test]
-fn allowance_other_eq_other_rs() {
-    world().run("scenarios/allowance_OtherEqOther.scen.json");
+fn allowance_othereqother_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/allowance_OtherEqOther.scen.json", world());
 }
 
 #[test]
-fn allowance_other_n_eq_other_rs() {
-    world().run("scenarios/allowance_OtherNEqOther.scen.json");
+fn allowance_otherneqother_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/allowance_OtherNEqOther.scen.json", world());
 }
 
 #[test]
 fn approve_caller_positive_rs() {
-    world().run("scenarios/approve_Caller-Positive.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/approve_Caller-Positive.scen.json", world());
 }
 
 #[test]
 fn approve_caller_zero_rs() {
-    world().run("scenarios/approve_Caller-Zero.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/approve_Caller-Zero.scen.json", world());
 }
 
 #[test]
 fn approve_other_positive_rs() {
-    world().run("scenarios/approve_Other-Positive.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/approve_Other-Positive.scen.json", world());
 }
 
 #[test]
 fn approve_other_zero_rs() {
-    world().run("scenarios/approve_Other-Zero.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/approve_Other-Zero.scen.json", world());
 }
 
 #[test]
-fn approve_switch_caller_rs() {
-    world().run("scenarios/approve_SwitchCaller.scen.json");
+fn approve_switchcaller_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/approve_SwitchCaller.scen.json", world());
 }
 
 #[test]
-fn balance_of_caller_rs() {
-    world().run("scenarios/balanceOf_Caller.scen.json");
+fn balanceof_caller_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/balanceOf_Caller.scen.json", world());
 }
 
 #[test]
-fn balance_of_non_caller_rs() {
-    world().run("scenarios/balanceOf_NonCaller.scen.json");
+fn balanceof_noncaller_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/balanceOf_NonCaller.scen.json", world());
 }
 
 #[test]
 fn not_payable_rs() {
-    world().run("scenarios/not_payable.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/not_payable.scen.json", world());
 }
 
 #[test]
-fn not_payable_dct_rs() {
-    world().run("scenarios/not_payable_dct.scen.json");
+fn totalsupply_positive_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/totalSupply_Positive.scen.json", world());
 }
 
 #[test]
-fn total_supply_positive_rs() {
-    world().run("scenarios/totalSupply_Positive.scen.json");
+fn totalsupply_zero_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/totalSupply_Zero.scen.json", world());
 }
 
 #[test]
-fn total_supply_zero_rs() {
-    world().run("scenarios/totalSupply_Zero.scen.json");
+fn transferfrom_alldistinct_balanceeqallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllDistinct-BalanceEqAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_distinct_balance_eq_allowance_rs() {
-    world().run("scenarios/transferFrom_AllDistinct-BalanceEqAllowance.scen.json");
+fn transferfrom_alldistinct_balanceneqallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllDistinct-BalanceNEqAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_distinct_balance_n_eq_allowance_rs() {
-    world().run("scenarios/transferFrom_AllDistinct-BalanceNEqAllowance.scen.json");
+fn transferfrom_alldistinct_entireallowancemorethanbalance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllDistinct-EntireAllowanceMoreThanBalance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_distinct_entire_allowance_more_than_balance_rs() {
-    world().run("scenarios/transferFrom_AllDistinct-EntireAllowanceMoreThanBalance.scen.json");
+fn transferfrom_alldistinct_entirebalanceeqallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllDistinct-EntireBalanceEqAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_distinct_entire_balance_eq_allowance_rs() {
-    world().run("scenarios/transferFrom_AllDistinct-EntireBalanceEqAllowance.scen.json");
+fn transferfrom_alldistinct_entirebalancemorethanallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllDistinct-EntireBalanceMoreThanAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_distinct_entire_balance_more_than_allowance_rs() {
-    world().run("scenarios/transferFrom_AllDistinct-EntireBalanceMoreThanAllowance.scen.json");
+fn transferfrom_alldistinct_morethanallowancelessthanbalance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllDistinct-MoreThanAllowanceLessThanBalance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_distinct_more_than_allowance_less_than_balance_rs() {
-    world().run("scenarios/transferFrom_AllDistinct-MoreThanAllowanceLessThanBalance.scen.json");
+fn transferfrom_alldistinct_morethanbalancelessthanallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllDistinct-MoreThanBalanceLessThanAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_distinct_more_than_balance_less_than_allowance_rs() {
-    world().run("scenarios/transferFrom_AllDistinct-MoreThanBalanceLessThanAllowance.scen.json");
+fn transferfrom_alldistinct_nooverflow_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllDistinct-NoOverflow.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_distinct_no_overflow_rs() {
-    world().run("scenarios/transferFrom_AllDistinct-NoOverflow.scen.json");
+fn transferfrom_alldistinct_stillnooverflow_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllDistinct-StillNoOverflow.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_distinct_still_no_overflow_rs() {
-    world().run("scenarios/transferFrom_AllDistinct-StillNoOverflow.scen.json");
+fn transferfrom_allequal_allowancerelevant_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllEqual-AllowanceRelevant.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_equal_allowance_relevant_rs() {
-    world().run("scenarios/transferFrom_AllEqual-AllowanceRelevant.scen.json");
+fn transferfrom_allequal_entirebalance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_AllEqual-EntireBalance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_all_equal_entire_balance_rs() {
-    world().run("scenarios/transferFrom_AllEqual-EntireBalance.scen.json");
+fn transferfrom_callereqfrom_allowancerelevant_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_CallerEqFrom-AllowanceRelevant.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_caller_eq_from_allowance_relevant_rs() {
-    world().run("scenarios/transferFrom_CallerEqFrom-AllowanceRelevant.scen.json");
+fn transferfrom_callereqfrom_entirebalance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_CallerEqFrom-EntireBalance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_caller_eq_from_entire_balance_rs() {
-    world().run("scenarios/transferFrom_CallerEqFrom-EntireBalance.scen.json");
+fn transferfrom_callereqfrom_morethanbalance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_CallerEqFrom-MoreThanBalance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_caller_eq_from_more_than_balance_rs() {
-    world().run("scenarios/transferFrom_CallerEqFrom-MoreThanBalance.scen.json");
+fn transferfrom_callereqto_balanceneqallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_CallerEqTo-BalanceNEqAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_caller_eq_to_balance_n_eq_allowance_rs() {
-    world().run("scenarios/transferFrom_CallerEqTo-BalanceNEqAllowance.scen.json");
+fn transferfrom_callereqto_morethanallowancelessthanbalance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_CallerEqTo-MoreThanAllowanceLessThanBalance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_caller_eq_to_more_than_allowance_less_than_balance_rs() {
-    world().run("scenarios/transferFrom_CallerEqTo-MoreThanAllowanceLessThanBalance.scen.json");
+fn transferfrom_callereqto_morethanbalancelessthanallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_CallerEqTo-MoreThanBalanceLessThanAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_caller_eq_to_more_than_balance_less_than_allowance_rs() {
-    world().run("scenarios/transferFrom_CallerEqTo-MoreThanBalanceLessThanAllowance.scen.json");
+fn transferfrom_exploratory_multipletransferssucceed_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_Exploratory-MultipleTransfersSucceed.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_exploratory_multiple_transfers_succeed_rs() {
-    world().run("scenarios/transferFrom_Exploratory-MultipleTransfersSucceed.scen.json");
+fn transferfrom_exploratory_multipletransfersthrow_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_Exploratory-MultipleTransfersThrow.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_exploratory_multiple_transfers_throw_rs() {
-    world().run("scenarios/transferFrom_Exploratory-MultipleTransfersThrow.scen.json");
+fn transferfrom_fromeqto_balanceeqallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_FromEqTo-BalanceEqAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_from_eq_to_balance_eq_allowance_rs() {
-    world().run("scenarios/transferFrom_FromEqTo-BalanceEqAllowance.scen.json");
+fn transferfrom_fromeqto_balanceneqallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_FromEqTo-BalanceNEqAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_from_eq_to_balance_n_eq_allowance_rs() {
-    world().run("scenarios/transferFrom_FromEqTo-BalanceNEqAllowance.scen.json");
+fn transferfrom_fromeqto_entireallowancemorethanbalance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_FromEqTo-EntireAllowanceMoreThanBalance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_from_eq_to_entire_allowance_more_than_balance_rs() {
-    world().run("scenarios/transferFrom_FromEqTo-EntireAllowanceMoreThanBalance.scen.json");
+fn transferfrom_fromeqto_entirebalanceeqallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_FromEqTo-EntireBalanceEqAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_from_eq_to_entire_balance_eq_allowance_rs() {
-    world().run("scenarios/transferFrom_FromEqTo-EntireBalanceEqAllowance.scen.json");
+fn transferfrom_fromeqto_entirebalancemorethanallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_FromEqTo-EntireBalanceMoreThanAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_from_eq_to_entire_balance_more_than_allowance_rs() {
-    world().run("scenarios/transferFrom_FromEqTo-EntireBalanceMoreThanAllowance.scen.json");
+fn transferfrom_fromeqto_morethanallowancelessthanbalance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_FromEqTo-MoreThanAllowanceLessThanBalance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_from_eq_to_more_than_allowance_less_than_balance_rs() {
-    world().run("scenarios/transferFrom_FromEqTo-MoreThanAllowanceLessThanBalance.scen.json");
+fn transferfrom_fromeqto_morethanbalancelessthanallowance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_FromEqTo-MoreThanBalanceLessThanAllowance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_from_eq_to_more_than_balance_less_than_allowance_rs() {
-    world().run("scenarios/transferFrom_FromEqTo-MoreThanBalanceLessThanAllowance.scen.json");
+fn transferfrom_fromeqto_nooverflow_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transferFrom_FromEqTo-NoOverflow.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_from_from_eq_to_no_overflow_rs() {
-    world().run("scenarios/transferFrom_FromEqTo-NoOverflow.scen.json");
+fn transfer_caller_allowanceirrelevant_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transfer_Caller-AllowanceIrrelevant.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_caller_allowance_irrelevant_rs() {
-    world().run("scenarios/transfer_Caller-AllowanceIrrelevant.scen.json");
+fn transfer_caller_entirebalance_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/transfer_Caller-EntireBalance.scen.json", world());
 }
 
 #[test]
-fn transfer_caller_entire_balance_rs() {
-    world().run("scenarios/transfer_Caller-EntireBalance.scen.json");
+fn transfer_caller_morethanbalance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transfer_Caller-MoreThanBalance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_caller_more_than_balance_rs() {
-    world().run("scenarios/transfer_Caller-MoreThanBalance.scen.json");
-}
-
-#[test]
-fn transfer_caller_no_overflow_rs() {
-    world().run("scenarios/transfer_Caller-NoOverflow.scen.json");
+fn transfer_caller_nooverflow_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/transfer_Caller-NoOverflow.scen.json", world());
 }
 
 #[test]
 fn transfer_caller_positive_rs() {
-    world().run("scenarios/transfer_Caller-Positive.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/transfer_Caller-Positive.scen.json", world());
 }
 
 #[test]
-fn transfer_caller_still_no_overflow_rs() {
-    world().run("scenarios/transfer_Caller-StillNoOverflow.scen.json");
+fn transfer_caller_stillnooverflow_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transfer_Caller-StillNoOverflow.scen.json",
+        world(),
+    );
 }
 
 #[test]
 fn transfer_caller_zero_rs() {
-    world().run("scenarios/transfer_Caller-Zero.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/transfer_Caller-Zero.scen.json", world());
 }
 
 #[test]
-fn transfer_other_allowance_irrelevant_rs() {
-    world().run("scenarios/transfer_Other-AllowanceIrrelevant.scen.json");
+fn transfer_other_allowanceirrelevant_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transfer_Other-AllowanceIrrelevant.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_other_entire_balance_rs() {
-    world().run("scenarios/transfer_Other-EntireBalance.scen.json");
+fn transfer_other_entirebalance_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/transfer_Other-EntireBalance.scen.json", world());
 }
 
 #[test]
-fn transfer_other_more_than_balance_rs() {
-    world().run("scenarios/transfer_Other-MoreThanBalance.scen.json");
+fn transfer_other_morethanbalance_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transfer_Other-MoreThanBalance.scen.json",
+        world(),
+    );
 }
 
 #[test]
-fn transfer_other_no_overflow_rs() {
-    world().run("scenarios/transfer_Other-NoOverflow.scen.json");
+fn transfer_other_nooverflow_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/transfer_Other-NoOverflow.scen.json", world());
 }
 
 #[test]
 fn transfer_other_positive_rs() {
-    world().run("scenarios/transfer_Other-Positive.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/transfer_Other-Positive.scen.json", world());
 }
 
 #[test]
-fn transfer_other_still_no_overflow_rs() {
-    world().run("scenarios/transfer_Other-StillNoOverflow.scen.json");
+fn transfer_other_stillnooverflow_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/transfer_Other-StillNoOverflow.scen.json",
+        world(),
+    );
 }
 
 #[test]
 fn transfer_other_zero_rs() {
-    world().run("scenarios/transfer_Other-Zero.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/transfer_Other-Zero.scen.json", world());
 }

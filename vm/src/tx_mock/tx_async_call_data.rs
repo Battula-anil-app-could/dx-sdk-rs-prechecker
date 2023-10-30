@@ -1,17 +1,22 @@
 use crate::{
-    tx_execution::BuiltinFunctionContainer,
+    tx_execution::BuiltinFunctionMap,
     tx_mock::{TxInput, TxResult},
-    types::{top_encode_u64, VMAddress, H256},
+};
+use dharitri_sc::{
+    codec::*,
+    types::heap::{Address, H256},
 };
 
-use num_bigint::BigUint;
+use crate::num_bigint::BigUint;
+
+use alloc::vec::Vec;
 
 use super::{CallbackPayments, Promise, TxFunctionName};
 
 #[derive(Debug, Clone)]
 pub struct AsyncCallTxData {
-    pub from: VMAddress,
-    pub to: VMAddress,
+    pub from: Address,
+    pub to: Address,
     pub call_value: BigUint,
     pub endpoint_name: TxFunctionName,
     pub arguments: Vec<Vec<u8>>,
@@ -37,14 +42,14 @@ fn result_status_bytes(result_status: u64) -> Vec<u8> {
     if result_status == 0 {
         vec![0x00]
     } else {
-        top_encode_u64(result_status)
+        top_encode_to_vec_u8(&result_status).unwrap()
     }
 }
 
 pub fn async_callback_tx_input(
     async_data: &AsyncCallTxData,
     async_result: &TxResult,
-    builtin_functions: &BuiltinFunctionContainer,
+    builtin_functions: &BuiltinFunctionMap,
 ) -> TxInput {
     let mut args: Vec<Vec<u8>> = vec![result_status_bytes(async_result.result_status)];
     if async_result.result_status == 0 {
@@ -70,9 +75,9 @@ pub fn async_callback_tx_input(
 }
 
 fn extract_callback_payments(
-    callback_contract_address: &VMAddress,
+    callback_contract_address: &Address,
     async_result: &TxResult,
-    builtin_functions: &BuiltinFunctionContainer,
+    builtin_functions: &BuiltinFunctionMap,
 ) -> CallbackPayments {
     let mut callback_payments = CallbackPayments::default();
     for async_call in &async_result.all_calls {
@@ -91,12 +96,12 @@ fn extract_callback_payments(
 }
 
 pub fn async_promise_tx_input(
-    address: &VMAddress,
+    address: &Address,
     promise: &Promise,
     async_result: &TxResult,
 ) -> TxInput {
     let mut args: Vec<Vec<u8>> = Vec::new();
-    let serialized_bytes = async_result.result_status.to_be_bytes().to_vec();
+    let serialized_bytes = top_encode_to_vec_u8(&async_result.result_status).unwrap();
     args.push(serialized_bytes);
     let callback_name = if async_result.result_status == 0 {
         args.extend_from_slice(async_result.result_values.as_slice());

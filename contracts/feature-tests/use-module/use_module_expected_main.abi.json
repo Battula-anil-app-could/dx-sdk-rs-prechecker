@@ -14,7 +14,7 @@
         },
         "framework": {
             "name": "dharitri-sc",
-            "version": "0.0.1"
+            "version": "0.0.2"
         }
     },
     "docs": [
@@ -679,17 +679,6 @@
             "outputs": []
         },
         {
-            "name": "cancelVoteSlashMember",
-            "mutability": "mutable",
-            "inputs": [
-                {
-                    "name": "member_to_slash",
-                    "type": "Address"
-                }
-            ],
-            "outputs": []
-        },
-        {
             "name": "slashMember",
             "mutability": "mutable",
             "inputs": [
@@ -1131,23 +1120,6 @@
                 {
                     "name": "WaitingForFees",
                     "discriminant": 6
-                }
-            ]
-        },
-        "OperationCompletionStatus": {
-            "type": "explicit-enum",
-            "variants": [
-                {
-                    "docs": [
-                        "indicates that operation was completed"
-                    ],
-                    "name": "completed"
-                },
-                {
-                    "docs": [
-                        "indicates that operation was interrupted prematurely, due to low gas"
-                    ],
-                    "name": "interrupted"
                 }
             ]
         },

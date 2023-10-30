@@ -11,67 +11,34 @@ fn world() -> ScenarioWorld {
     blockchain
 }
 
+#[ignore] // verify_ed25519 not implemented
 #[test]
 fn claim_moax_rs() {
-    world().run("scenarios/claim-moax.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/claim-moax.scen.json", world());
 }
 
+#[ignore] // verify_ed25519 not implemented
 #[test]
 fn claim_dct_rs() {
-    world().run("scenarios/claim-dct.scen.json");
-}
-
-#[test]
-fn claim_fees_rs() {
-    world().run("scenarios/claim-fees.scen.json");
-}
-
-#[test]
-fn claim_multi_dct_rs() {
-    world().run("scenarios/claim-multi-dct.scen.json");
-}
-
-#[test]
-fn forward_rs() {
-    world().run("scenarios/forward.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/claim-dct.scen.json", world());
 }
 
 #[test]
 fn fund_moax_and_dct_rs() {
-    world().run("scenarios/fund-moax-and-dct.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/fund-moax-and-dct.scen.json", world());
 }
 
 #[test]
 fn set_accounts_rs() {
-    world().run("scenarios/set-accounts.scen.json");
-}
-
-#[test]
-fn whitelist_blacklist_fee_token_rs() {
-    world().run("scenarios/whitelist-blacklist-fee-tokens.scen.json");
-}
-
-#[test]
-fn pay_fee_and_fund_dct_rs() {
-    world().run("scenarios/pay-fee-and-fund-dct.scen.json");
-}
-
-#[test]
-fn pay_fee_and_fund_moax_rs() {
-    world().run("scenarios/pay-fee-and-fund-moax.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/set-accounts.scen.json", world());
 }
 
 #[test]
 fn withdraw_moax_rs() {
-    world().run("scenarios/withdraw-moax.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/withdraw-moax.scen.json", world());
 }
 
 #[test]
 fn withdraw_dct_rs() {
-    world().run("scenarios/withdraw-dct.scen.json");
-}
-
-#[test]
-fn withdraw_multi_dct_rs() {
-    world().run("scenarios/withdraw-multi-dct.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/withdraw-dct.scen.json", world());
 }

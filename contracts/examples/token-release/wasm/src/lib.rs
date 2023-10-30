@@ -10,10 +10,7 @@
 // Total number of exported functions:  15
 
 #![no_std]
-
-// Configuration that works with rustc < 1.73.0.
-// TODO: Recommended rustc version: 1.73.0 or newer.
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -21,21 +18,20 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     token_release
     (
-        init => init
-        addFixedAmountGroup => add_fixed_amount_group
-        addPercentageBasedGroup => add_percentage_based_group
-        removeGroup => remove_group
-        addUserGroup => add_user_group
-        removeUser => remove_user
-        requestAddressChange => request_address_change
-        approveAddressChange => approve_address_change
-        endSetupPeriod => end_setup_period
-        claimTokens => claim_tokens
-        verify_address_change => verify_address_change
-        get_claimable_tokens => get_claimable_tokens
-        getTokenIdentifier => token_identifier
-        getTokenTotalSupply => token_total_supply
+        addFixedAmountGroup
+        addPercentageBasedGroup
+        removeGroup
+        addUserGroup
+        removeUser
+        requestAddressChange
+        approveAddressChange
+        endSetupPeriod
+        claimTokens
+        verify_address_change
+        get_claimable_tokens
+        getTokenIdentifier
+        getTokenTotalSupply
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

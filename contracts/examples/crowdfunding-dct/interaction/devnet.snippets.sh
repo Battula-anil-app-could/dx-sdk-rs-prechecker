@@ -1,25 +1,19 @@
-ALICE="./interaction/alice.pem"
-PROJECT="${PWD}"
-PROXY=https://devnet-gateway.dharitri.com
-CHAINID=D
-
+ALICE="${USERS}/alice.pem"
 BOB="${USERS}/bob.pem"
 
 ADDRESS=$(mxpy data load --key=address-devnet)
 DEPLOY_TRANSACTION=$(mxpy data load --key=deployTransaction-devnet)
 
-DEPLOY_GAS="25000000"
+DEPLOY_GAS="80000000"
 TARGET=10
-
-DEADLINE_UNIX_TIMESTAMP=$(date -d '2100-05-12 00:00:01' +"%s")
+DEADLINE_UNIX_TIMESTAMP=1609452000 # Fri Jan 01 2021 00:00:00 GMT+0200 (Eastern European Standard Time)
 MOAX_TOKEN_ID=0x4d4f4158 # "MOAX"
 
 deploy() {
     mxpy --verbose contract deploy --project=${PROJECT} --recall-nonce --pem=${ALICE} \
           --gas-limit=${DEPLOY_GAS} \
           --arguments ${TARGET} ${DEADLINE_UNIX_TIMESTAMP} ${MOAX_TOKEN_ID} \
-          --proxy=${PROXY} --chain=${CHAINID} --send
-          --outfile="deploy-devnet.interaction.json" || return
+          --outfile="deploy-devnet.interaction.json" --send || return
 
     TRANSACTION=$(mxpy data parse --file="deploy-devnet.interaction.json" --expression="data['emittedTransactionHash']")
     ADDRESS=$(mxpy data parse --file="deploy-devnet.interaction.json" --expression="data['contractAddress']")
@@ -89,7 +83,7 @@ getDeadline() {
 
 # BOB's deposit
 getDeposit() {
-    local BOB_ADDRESS_BECH32=moa1w827ezsgdc76dtwlflzpugerv9dcaclcr5khd2yshx9ua92r9fuqvelk67
+    local BOB_ADDRESS_BECH32=moa1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruq0yu4wk
     local BOB_ADDRESS_HEX=0x$(mxpy wallet bech32 --decode ${BOB_ADDRESS_BECH32})
 
     mxpy --verbose contract query ${ADDRESS} --function="getDeposit" --arguments ${BOB_ADDRESS_HEX}

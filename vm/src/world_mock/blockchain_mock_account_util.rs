@@ -1,13 +1,30 @@
+use alloc::vec::Vec;
+use dharitri_sc::types::heap::Address;
+
 use std::{collections::HashMap, fmt::Write};
 
-use crate::{display_util::address_hex, types::VMAddress};
+use crate::address_hex;
 
-use super::{AccountData, BlockchainState};
+use super::AccountData;
 
-impl BlockchainState {
+const SC_ADDRESS_NUM_LEADING_ZEROS: u8 = 8;
+
+use super::BlockchainMock;
+
+impl BlockchainMock {
     pub fn add_account(&mut self, acct: AccountData) {
         let address = acct.address.clone();
-        self.accounts.insert(address, acct);
+        self.accounts.insert(address.clone(), acct);
+        self.add_addr_scenario_string(address);
+    }
+
+    pub fn add_addr_scenario_string(&mut self, address: Address) {
+        if self.addr_to_pretty_string_map.contains_key(&address) {
+            return;
+        }
+
+        let addr_pretty = super::address_as_scenario_string(&address);
+        self.addr_to_pretty_string_map.insert(address, addr_pretty);
     }
 
     pub fn validate_and_add_account(&mut self, acct: AccountData) {
@@ -15,8 +32,12 @@ impl BlockchainState {
         self.add_account(acct);
     }
 
-    pub fn update_accounts(&mut self, accounts: HashMap<VMAddress, AccountData>) {
-        self.accounts.extend(accounts);
+    pub fn update_accounts(&mut self, accounts: HashMap<Address, AccountData>) {
+        for addr in accounts.keys() {
+            self.add_addr_scenario_string(addr.clone());
+        }
+
+        self.accounts.extend(accounts.into_iter());
     }
 
     pub fn print_accounts(&self) {
@@ -29,26 +50,22 @@ impl BlockchainState {
 
     pub fn put_new_address(
         &mut self,
-        creator_address: VMAddress,
+        creator_address: Address,
         creator_nonce: u64,
-        new_address: VMAddress,
+        new_address: Address,
     ) {
         self.new_addresses
             .insert((creator_address, creator_nonce), new_address);
     }
 
-    pub fn get_new_address(
-        &self,
-        creator_address: VMAddress,
-        creator_nonce: u64,
-    ) -> Option<VMAddress> {
+    pub fn get_new_address(&self, creator_address: Address, creator_nonce: u64) -> Option<Address> {
         self.new_addresses
             .get(&(creator_address, creator_nonce))
             .cloned()
     }
 
     pub fn validate_account(&self, account: &AccountData) {
-        let is_sc = account.address.is_smart_contract_address();
+        let is_sc = is_smart_contract_address(&account.address);
         let has_code = self.check_account_has_code(account);
 
         assert!(
@@ -69,4 +86,12 @@ impl BlockchainState {
             .unwrap_or(&Vec::<u8>::new())
             .is_empty()
     }
+}
+
+pub fn is_smart_contract_address(address: &Address) -> bool {
+    address
+        .as_bytes()
+        .iter()
+        .take(SC_ADDRESS_NUM_LEADING_ZEROS.into())
+        .all(|item| item == &0u8)
 }

@@ -10,10 +10,7 @@
 // Total number of exported functions:   8
 
 #![no_std]
-
-// Configuration that works with rustc < 1.73.0.
-// TODO: Recommended rustc version: 1.73.0 or newer.
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -21,14 +18,12 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     nft_minter
     (
-        init => init
-        createNft => create_nft
-        claimRoyaltiesFromMarketplace => claim_royalties_from_marketplace
-        issueToken => issue_token
-        setLocalRoles => set_local_roles
-        buyNft => buy_nft
-        getNftPrice => get_nft_price
+        createNft
+        claimRoyaltiesFromMarketplace
+        issueToken
+        setLocalRoles
+        buyNft
+        getNftPrice
+        callBack
     )
 }
-
-dharitri_sc_wasm_adapter::async_callback! { nft_minter }

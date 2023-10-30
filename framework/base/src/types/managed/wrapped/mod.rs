@@ -1,6 +1,5 @@
 mod moax_or_dct_token_identifier;
 mod moax_or_dct_token_payment;
-mod moax_or_multi_dct_payment;
 mod encoded_managed_vec_item;
 mod dct_token_data;
 mod dct_token_payment;
@@ -20,7 +19,6 @@ mod token_identifier;
 
 pub use moax_or_dct_token_identifier::MoaxOrDctTokenIdentifier;
 pub use moax_or_dct_token_payment::MoaxOrDctTokenPayment;
-pub use moax_or_multi_dct_payment::MoaxOrMultiDctPayment;
 pub(crate) use encoded_managed_vec_item::EncodedManagedVecItem;
 pub use dct_token_data::DctTokenData;
 pub use dct_token_payment::DctTokenPayment;
@@ -30,7 +28,9 @@ pub(crate) use managed_byte_array::ManagedBufferSizeContext;
 pub use managed_byte_array::ManagedByteArray;
 pub use managed_option::ManagedOption;
 pub use managed_ref::ManagedRef;
-pub use managed_vec::ManagedVec;
+pub use managed_vec::{
+    managed_vec_from_slice_of_boxed_bytes, managed_vec_of_buffers_to_arg_buffer, ManagedVec,
+};
 pub use managed_vec_item::ManagedVecItem;
 pub use managed_vec_owned_iter::ManagedVecOwnedIterator;
 pub use managed_vec_ref::ManagedVecRef;

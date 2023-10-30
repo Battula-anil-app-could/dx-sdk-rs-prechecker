@@ -501,20 +501,6 @@ where
     }
 }
 
-impl<'a, SA, T> IntoIterator for &'a LinkedListMapper<SA, T>
-where
-    SA: StorageMapperApi,
-    T: TopEncode + TopDecode + NestedEncode + NestedDecode + Clone + 'static,
-{
-    type Item = LinkedListNode<T>;
-
-    type IntoIter = Iter<'a, SA, T>;
-
-    fn into_iter(self) -> Self::IntoIter {
-        self.iter()
-    }
-}
-
 pub struct Iter<'a, SA, T>
 where
     SA: StorageMapperApi,
@@ -577,11 +563,10 @@ where
     }
 }
 
-impl<SA, T, U> CodecFrom<LinkedListMapper<SA, T>> for MultiValueEncoded<SA, U>
+impl<SA, T> CodecFrom<LinkedListMapper<SA, T>> for MultiValueEncoded<SA, T>
 where
     SA: StorageMapperApi,
     T: TopEncode + TopDecode + NestedEncode + NestedDecode + Clone,
-    U: CodecFrom<T>,
 {
 }
 

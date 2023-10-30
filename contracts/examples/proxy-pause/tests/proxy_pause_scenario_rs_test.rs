@@ -7,18 +7,13 @@ fn world() -> ScenarioWorld {
     blockchain.register_contract("file:output/proxy-pause.wasm", proxy_pause::ContractBuilder);
 
     blockchain.register_contract(
-        "file:../check-pause/output/check-pause.wasm",
-        check_pause::ContractBuilder,
+        "file:../../feature-tests/use-module/output/use-module.wasm",
+        use_module::ContractBuilder,
     );
     blockchain
 }
 
 #[test]
-fn init_rs() {
-    world().run("scenarios/init.scen.json");
-}
-
-#[test]
-fn pause_and_unpause_rs() {
-    world().run("scenarios/pause-and-unpause.scen.json");
+fn pause_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/pause-and-unpause.scen.json", world());
 }

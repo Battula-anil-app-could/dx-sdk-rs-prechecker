@@ -5,7 +5,6 @@ pub trait HandleTypeInfo {
     type BigIntHandle: HandleConstraints;
     type BigFloatHandle: HandleConstraints;
     type EllipticCurveHandle: HandleConstraints;
-    type ManagedMapHandle: HandleConstraints;
 }
 
 use crate::codec::TryStaticCast;
@@ -30,10 +29,6 @@ pub trait HandleConstraints:
         } else {
             E::error_api_impl().signal_error(b"Cast type mismatch")
         }
-    }
-
-    fn get_raw_handle_unchecked(&self) -> RawHandle {
-        self.get_raw_handle()
     }
 }
 
