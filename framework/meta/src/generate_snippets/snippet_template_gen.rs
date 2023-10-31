@@ -36,7 +36,7 @@ pub(crate) fn write_snippet_constants(file: &mut File) {
 const PEM: &str = \"alice.pem\";
 const SC_ADDRESS: &str = \"\";
 
-const SYSTEM_SC_BECH32: &str = \"moa1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls29jpxv\";
+const SYSTEM_SC_BECH32: &str = \"erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u\";
 const DEFAULT_ADDRESS_EXPR: &str = \"0x0000000000000000000000000000000000000000000000000000000000000000\";
 const DEFAULT_GAS_LIMIT: u64 = 100_000_000;
 const TOKEN_ISSUE_COST: u64 = 50_000_000_000_000_000;").unwrap();

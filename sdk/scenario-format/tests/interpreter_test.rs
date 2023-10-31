@@ -298,7 +298,7 @@ fn test_bech32() {
     assert_eq!(
         hex::decode("000000000000000000010000000000000000000000000000000000000002ffff").unwrap(),
         interpret_string(
-            "bech32:moa1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls29jpxv",
+            "bech32:erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u",
             context
         )
     );

@@ -27,7 +27,7 @@ const GATEWAY: &str = dharitri_sc_snippets::erdrs::blockchain::TESTNET_GATEWAY;
 const PEM: &str = "alice.pem";
 const DEFAULT_MULTISIG_ADDRESS_EXPR: &str =
     "0x0000000000000000000000000000000000000000000000000000000000000000";
-const SYSTEM_SC_BECH32: &str = "moa1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls29jpxv";
+const SYSTEM_SC_BECH32: &str = "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u";
 
 type MultisigContract = ContractInfo<multisig::Proxy<DebugApi>>;
 

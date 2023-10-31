@@ -5,7 +5,7 @@ DEPLOY_TRANSACTION=$(mxpy data load --key=deployTransaction-testnet)
 PROXY=https://testnet-gateway.dharitri.com
 CHAIN_ID=T
 
-DCT_SYSTEM_SC_ADDRESS=moa1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls29jpxv
+DCT_SYSTEM_SC_ADDRESS=erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u
 
 deploy() {
     ######################################################################
