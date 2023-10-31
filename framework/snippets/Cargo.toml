@@ -27,6 +27,6 @@ version = "=0.0.5"
 path = "../scenario"
 
 [dependencies.dharitri-sdk]
-version = "=0.1.1"
+version = "0.0.2"
 path = "../../sdk/core"
 
