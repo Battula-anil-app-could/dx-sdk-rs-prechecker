@@ -26,11 +26,19 @@ They are:
 - `dharitri-chain-scenario-format`, in short `scenario-format`, scenario JSON serializer/deserializer, 1 crate.
 - `dharitri-sdk`, in short `sdk`, allows communication with the chain(s), 1 crate.
 
-## [sc 0.0.3, vm 0.1.4] - 2023-01-26
+
+## [sc 0.0.4, vm 0.1.5] - 2023-02-06
+- `dharitri-sc-meta` improvements:
+	- Rust snippet generator fixes. The generator creates compilable code with appropriate argument types.
+	- `local-deps` command: generates a report on the local depedencies of contract crates. Will explore indirect depdencies too.
+	- Upgrade tool minor fix.
+
+## [sc 0.39.4, vm 0.1.4] - 2023-01-26
 - `dharitri-sc-meta` improvements:
 	- `--locked` flag get passed to the build command, preserves dependencies in Cargo.lock.
 	- `update` command updates Cargo.lock files without building the contracts.
 - Backwards compatibility for running scenarios using the VM Go infrastructure.
+
 ## [sc 0.39.3, vm 0.1.3] - 2023-01-26
 - `dharitri-sc-meta` improvements:
 	- `upgrade` can handle crates as early as `0.28.0`;
@@ -40,13 +48,13 @@ They are:
 	- printing to console the build command.
 - `BigUint` from `u128` conversion.
 
-## [sc 0.39.2, vm 0.1.2] - 2023-01-19
+## [sc 0.0.2, vm 0.1.2] - 2023-01-19
 - `dharitri-sc-meta` improvements:
 	- `all` command that allows calling all contract meta crates in a folder;
 	- `upgrade` also re-generates wasm crates after reaching 0.39.1.
 - Cleaned up dependencies.
 
-## [sc 0.39.1, codec 0.0.2, vm 0.1.1, scenario-format 0.19.1, sdk 0.1.1] - 2023-01-18
+## [sc 0.39.1, codec 0.17.1, vm 0.1.1, scenario-format 0.19.1, sdk 0.1.1] - 2023-01-18
 - `dharitri-sc-meta` can be installed as a standalone tool (`sc-meta`), and used to automatically upgrade contracts.
 - Many depedencies updates across the repo.
 - Updated readme files.
@@ -416,7 +424,7 @@ They are:
 ## [dharitri-wasm 0.17.2] - 2021-06-04
 - callbacks can now declared in modules only (manual forwarding from the main contract no longer required)
 
-## [dharitri-wasm 0.0.2] - 2021-06-04
+## [dharitri-wasm 0.17.1] - 2021-06-04
 - `legacy-nft-transfer` feature for interacting with older versions of Arwen
 
 ## [dharitri-wasm 0.17.0] - 2021-05-28
