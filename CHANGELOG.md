@@ -27,7 +27,7 @@ They are:
 - `dharitri-sdk`, in short `sdk`, allows communication with the chain(s), 1 crate.
 
 
-## [sc 0.0.4, vm 0.1.5] - 2023-02-06
+## [sc 0.0.4, vm 0.0.4] - 2023-02-06
 - `dharitri-sc-meta` improvements:
 	- Rust snippet generator fixes. The generator creates compilable code with appropriate argument types.
 	- `local-deps` command: generates a report on the local depedencies of contract crates. Will explore indirect depdencies too.

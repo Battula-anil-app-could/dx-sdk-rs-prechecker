@@ -667,7 +667,7 @@ dependencies = [
 
 [[package]]
 name = "dharitri-chain-vm"
-version = "0.1.5"
+version = "0.0.4"
 dependencies = [
  "bech32",
  "dharitri-chain-scenario-format",
