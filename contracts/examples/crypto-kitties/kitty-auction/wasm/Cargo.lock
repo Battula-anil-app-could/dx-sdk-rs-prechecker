@@ -140,7 +140,7 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-codec"
-version = "0.17.1"
+version = "0.0.2"
 dependencies = [
  "arrayvec",
  "dharitri-sc-codec-derive",
@@ -148,7 +148,7 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-codec-derive"
-version = "0.17.1"
+version = "0.0.2"
 dependencies = [
  "hex",
  "proc-macro2",
