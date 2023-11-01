@@ -89,7 +89,7 @@ pub mod tests {
     #[test]
     fn test_decode_address() {
         let addr = Address::from_bech32_string(
-            "erd1qqqqqqqqqqqqqpgqyfjjn43spw7teklwtpz4x5waygq2mluyj9ts0mdwn6",
+            "moa1qqqqqqqqqqqqqpgqyfjjn43spw7teklwtpz4x5waygq2mluyj9tszrtp02",
         )
         .unwrap();
         let encode = hex::encode(addr.to_bytes());

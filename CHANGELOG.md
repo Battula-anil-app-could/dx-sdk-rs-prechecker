@@ -26,6 +26,9 @@ They are:
 - `dharitri-chain-scenario-format`, in short `scenario-format`, scenario JSON serializer/deserializer, 1 crate.
 - `dharitri-sdk`, in short `sdk`, allows communication with the chain(s), 1 crate.
 
+## [sc 0.0.6, vm 0.2.0] - 2023-04-20
+- Call value `moax_value` and `all_dct_transfers` methods return `ManagedRef` instead of owned objects, because they are cached (to avoid accidental corruption of the underlying cache).
+
 ## [sc 0.0.5, vm 0.1.8] - 2023-03-29
 - `dharitri-sc-meta` `test-gen` command: generates Rust integration tests based on scenarios present in the `scenarios` folder.
  - `UnorderedSetMapper` `swap_indexes` method.
@@ -46,7 +49,7 @@ They are:
 	- `local-deps` command: generates a report on the local depedencies of contract crates. Will explore indirect depdencies too.
 	- Upgrade tool minor fix.
 
-## [sc 0.0.5, vm 0.1.4] - 2023-01-26
+## [sc 0.39.4, vm 0.1.4] - 2023-01-26
 - `dharitri-sc-meta` improvements:
 	- `--locked` flag get passed to the build command, preserves dependencies in Cargo.lock.
 	- `update` command updates Cargo.lock files without building the contracts.

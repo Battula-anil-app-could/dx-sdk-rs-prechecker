@@ -9,11 +9,11 @@ async fn main() {
         nonce: 1,
         value: "50".to_string(),
         receiver: Address::from_bech32_string(
-            "erd1rh5ws22jxm9pe7dtvhfy6j3uttuupkepferdwtmslms5fydtrh5sx3xr8r",
+            "moa1rh5ws22jxm9pe7dtvhfy6j3uttuupkepferdwtmslms5fydtrh5stfqvmn",
         )
         .unwrap(),
         sender: Address::from_bech32_string(
-            "erd1rh5ws22jxm9pe7dtvhfy6j3uttuupkepferdwtmslms5fydtrh5sx3xr8r",
+            "moa1rh5ws22jxm9pe7dtvhfy6j3uttuupkepferdwtmslms5fydtrh5stfqvmn",
         )
         .unwrap(),
         data: Some(base64::encode("hello")),

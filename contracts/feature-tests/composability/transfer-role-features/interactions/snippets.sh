@@ -18,7 +18,7 @@ SC_WITH_ROLE_ADDRESS_HEX="0x$(mxpy wallet bech32 --decode ${SC_WITH_ROLE_ADDRESS
 SC_DEST_ADDRESS_BECH32=
 SC_DEST_ADDRESS_HEX="0x$(mxpy wallet bech32 --decode ${SC_DEST_ADDRESS_BECH32})"
 
-DCT_SYSTEM_SC_ADDRESS=erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u
+DCT_SYSTEM_SC_ADDRESS=moa1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls29jpxv
 DCT_TRANSFER_FUNC_NAME="DCTTransfer"
 DCT_MULTI_TRANSFER_FUNC_NAME="MultiDCTNFTTransfer"
 TRANSFER_ROLE_NAME_HEX=0x4443545472616E73666572526F6C65
