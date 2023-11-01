@@ -26,10 +26,14 @@ They are:
 - `dharitri-chain-scenario-format`, in short `scenario-format`, scenario JSON serializer/deserializer, 1 crate.
 - `dharitri-sdk`, in short `sdk`, allows communication with the chain(s), 1 crate.
 
-## [sc 0.0.6, vm 0.2.0] - 2023-04-20
+## [sc 0.0.7, vm 0.2.1] - 2023-04-24
+- Building contracts also triggers an EI check, which verifies compatibility with various VM versions. It currently only issues warnings.
+- `ManagedVecItem` implementation for arrays.
+
+## [sc 0.40.0, vm 0.2.0] - 2023-04-20
 - Call value `moax_value` and `all_dct_transfers` methods return `ManagedRef` instead of owned objects, because they are cached (to avoid accidental corruption of the underlying cache).
 
-## [sc 0.0.5, vm 0.1.8] - 2023-03-29
+## [sc 0.39.8, vm 0.1.8] - 2023-03-29
 - `dharitri-sc-meta` `test-gen` command: generates Rust integration tests based on scenarios present in the `scenarios` folder.
  - `UnorderedSetMapper` `swap_indexes` method.
 
