@@ -26,7 +26,10 @@ They are:
 - `dharitri-chain-scenario-format`, in short `scenario-format`, scenario JSON serializer/deserializer, 1 crate.
 - `dharitri-sdk`, in short `sdk`, allows communication with the chain(s), 1 crate.
 
-## [sc 0.0.9, vm 0.3.1] - 2023-05-15
+## [sc 0.1.0, codec 0.0.3, vm 0.3.2] - 2023-06-09
+- Releasing a new version of the codec, without the dependency to `wee_alloc`.
+
+## [sc 0.41.1, vm 0.3.1] - 2023-05-15
 - Fixed an edge case for the token storage mappers (`FungibleTokenMapper`, `NonFungibleTokenMapper`).
 
 ## [sc 0.41.0, vm 0.3.0] - 2023-05-05
@@ -90,7 +93,7 @@ They are:
 	- `upgrade` also re-generates wasm crates after reaching 0.39.1.
 - Cleaned up dependencies.
 
-## [sc 0.39.1, codec 0.0.2, vm 0.1.1, scenario-format 0.19.1, sdk 0.1.1] - 2023-01-18
+## [sc 0.39.1, codec 0.17.1, vm 0.1.1, scenario-format 0.19.1, sdk 0.1.1] - 2023-01-18
 - `dharitri-sc-meta` can be installed as a standalone tool (`sc-meta`), and used to automatically upgrade contracts.
 - Many depedencies updates across the repo.
 - Updated readme files.
@@ -456,10 +459,10 @@ They are:
 ## [dharitri-wasm 0.17.3] - 2021-06-11
 - `SingleValueMapper` `set_if_empty` method
 
-## [dharitri-wasm 0.17.2] - 2021-06-04
+## [dharitri-wasm 0.0.3] - 2021-06-04
 - callbacks can now declared in modules only (manual forwarding from the main contract no longer required)
 
-## [dharitri-wasm 0.0.2] - 2021-06-04
+## [dharitri-wasm 0.17.1] - 2021-06-04
 - `legacy-nft-transfer` feature for interacting with older versions of Arwen
 
 ## [dharitri-wasm 0.17.0] - 2021-05-28
