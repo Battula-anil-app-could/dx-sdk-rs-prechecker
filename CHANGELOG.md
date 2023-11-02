@@ -26,7 +26,12 @@ They are:
 - `dharitri-chain-scenario-format`, in short `scenario-format`, scenario JSON serializer/deserializer, 1 crate.
 - `dharitri-sdk`, in short `sdk`, allows communication with the chain(s), 1 crate.
 
-## [sc 0.1.0, codec 0.0.3, vm 0.3.2] - 2023-06-09
+
+## [sc 0.1.1, vm 0.3.3] - 2023-06-19
+- Bugfix on `ManagedBufferCachedBuilder`, involving large inputs.
+- Explicit enum ABI: `OperationCompletionStatus` is now properly described in the ABI as an enum that gets serialized by name instead of discriminant.
+
+## [sc 0.41.2, codec 0.0.3, vm 0.3.2] - 2023-06-09
 - Releasing a new version of the codec, without the dependency to `wee_alloc`.
 
 ## [sc 0.41.1, vm 0.3.1] - 2023-05-15
