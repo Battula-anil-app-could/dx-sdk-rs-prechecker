@@ -66,7 +66,7 @@ impl<OriginalResult> TypedScDeploy<OriginalResult> {
     }
 
     #[deprecated(
-        since = "0.1.2",
+        since = "0.42.0",
         note = "Please use method `code` instead. To ease transition, it is also possible to call it with a tuple like so: `.code((expr, context))`"
     )]
     #[allow(deprecated)]
