@@ -26,7 +26,7 @@ The crowdfunding tutorial is a great place to start: https://docs.dharitri.com/d
 
 # IDE
 
-The framework is designed to be easiest to use with the Dharitri IDE VSCode extension: https://marketplace.visualstudio.com/items?itemName=Dharitri.vscode-dharitri-ide
+The framework is designed to be easiest to use with the IDE VSCode extension: https://marketplace.visualstudio.com/items?itemName=Dharitri.vscode-dharitri-ide
 
 # Building contracts
 
