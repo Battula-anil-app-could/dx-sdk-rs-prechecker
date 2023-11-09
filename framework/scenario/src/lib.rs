@@ -14,7 +14,7 @@ pub mod test_wallets;
 mod vm_go_tool;
 
 #[deprecated(
-    since = "0.42.0",
+    since = "0.1.2",
     note = "Use the blackbox testing framework instead. If needed, it also supports whitebox calls."
 )]
 pub mod whitebox_legacy;
@@ -50,7 +50,7 @@ use std::path::Path;
 ///
 /// Use `sc-meta test-gen` to replace all calls to it automatically.
 #[deprecated(
-    since = "0.42.0",
+    since = "0.1.2",
     note = "Call `sc-meta test-gen` in the project folder to automatically upgrade all scenario tests."
 )]
 pub fn run_go<P: AsRef<Path>>(relative_path: P) {
@@ -69,7 +69,7 @@ pub fn mandos_go<P: AsRef<Path>>(relative_path: P) {
 ///
 /// Use `sc-meta test-gen` to replace all calls to it automatically.
 #[deprecated(
-    since = "0.42.0",
+    since = "0.1.2",
     note = "Call `sc-meta test-gen` in the project folder to automatically upgrade all scenario tests."
 )]
 pub fn run_rs<P: AsRef<Path>>(relative_path: P, world: ScenarioWorld) {

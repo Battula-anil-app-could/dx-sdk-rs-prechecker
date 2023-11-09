@@ -138,7 +138,7 @@ impl ScCallStep {
     ///     - "out"
     ///     - "status" set to 0
     #[deprecated(
-        since = "0.42.0",
+        since = "0.1.2",
         note = "Please use `call` followed by `expect`, there is no point in having a method that does both."
     )]
     pub fn call_expect<CC, ExpectedResult>(

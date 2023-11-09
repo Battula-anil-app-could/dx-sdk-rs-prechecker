@@ -81,7 +81,7 @@ unwrapMoaxBob() {
 getWrappedMoaxTokenIdentifier() {
     local QUERY_OUTPUT=$(mxpy --verbose contract query ${ADDRESS} --function="getWrappedMoaxTokenId" --proxy=${PROXY})
     TOKEN_IDENTIFIER=0x$(jq -r '.[0] .hex' <<< "${QUERY_OUTPUT}")
-    echo "Wrapped eGLD token identifier: ${TOKEN_IDENTIFIER}"
+    echo "Wrapped MOAX token identifier: ${TOKEN_IDENTIFIER}"
 }
 
 getLockedMoaxBalance() {

@@ -51,7 +51,7 @@ impl Interactor {
         self.post_runners.run_sc_query_step(step);
     }
 
-    #[deprecated(since = "0.42.0", note = "Was renamed to `quick_query`.")]
+    #[deprecated(since = "0.1.2", note = "Was renamed to `quick_query`.")]
     pub async fn vm_query<CC, RequestedResult>(&mut self, contract_call: CC) -> RequestedResult
     where
         CC: ContractCall<StaticApi>,

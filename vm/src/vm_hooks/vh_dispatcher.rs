@@ -30,7 +30,7 @@ fn bool_to_i32(b: bool) -> i32 {
 impl VMHooks for VMHooksDispatcher {
     fn set_vm_hooks_ptr(&mut self, _vm_hooks_ptr: *mut c_void) {}
 
-    fn managed_get_back_transfers(&self, _: i32, _: i32) {}
+    fn managed_get_back_transfers(&self, _: i32, _: i32) { }
 
     fn get_gas_left(&self) -> i64 {
         self.handler.get_gas_left() as i64
@@ -45,7 +45,11 @@ impl VMHooks for VMHooksDispatcher {
     }
 
     fn get_shard_of_address(&self, address_offset: MemPtr) -> i32 {
-        panic!("Unavailable: get_shard_of_address")
+        unsafe {
+            mem_conv::with_bytes(address_offset, 32, |address_bytes| {
+                self.handler.get_shard_of_address(address_bytes)
+            })
+        }
     }
 
     fn is_smart_contract(&self, address_offset: MemPtr) -> i32 {

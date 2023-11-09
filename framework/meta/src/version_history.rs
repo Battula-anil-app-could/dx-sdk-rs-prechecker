@@ -1,46 +1,42 @@
-/// Not necessarily the last entry in `VERSIONS`.
+/// The last version to be used for upgrades and templates.
 ///
-/// Indicates where to stop with the upgrades.
-pub const DEFAULT_LAST_VERSION: &str = "0.1.3";
+/// Should be edited every time a new version of the framework is released.
+pub const LAST_VERSION: &str = "0.1.4";
 
-/// Known version for the upgrader.
+/// Indicates where to stop with the upgrades.
+pub const LAST_UPGRADE_VERSION: &str = LAST_VERSION;
+
+pub const LAST_TEMPLATE_VERSION: &str = LAST_VERSION;
+
+/// Known versions for the upgrader.
 #[rustfmt::skip]
 pub const VERSIONS: &[&str] = &[
-    "0.28.0",
-    "0.29.0",
-    "0.29.2",
-    "0.29.3",
-    "0.30.0",
-    "0.31.0",
-    "0.31.1",
-    "0.32.0",
-    "0.33.0",
-    "0.33.1",
-    "0.34.0",
-    "0.34.1",
-    "0.35.0",
-    "0.36.0",
-    "0.36.1",
-    "0.37.0",
-    "0.38.0",
-    "0.39.0",
-    "0.39.1",
-    "0.39.2",
-    "0.39.3",
-    "0.39.4",
-    "0.39.5",
-    "0.39.6",
-    "0.39.7",
-    "0.39.8",
-    "0.40.0",
-    "0.40.1",
-    "0.41.0",
-    "0.41.1",
-    "0.41.2",
-    "0.41.3",
-    "0.42.0",
+    "0.0.1",
+    "0.0.2",
+    "0.0.3",
+    "0.0.4",
+    "0.0.5",
+    "0.0.6",
+    "0.0.7",
+    "0.0.8",
+    "0.0.9",
+    "0.1.0",
+    "0.1.1",
+    "0.1.2",
     "0.1.3",
+    "0.1.4",
+    
+
 ];
+
+/// We started supporting contract templates with version 0.1.4.
+pub fn template_versions() -> &'static [&'static str] {
+    &VERSIONS[10..]
+}
+
+pub fn validate_template_tag(tag: &str) -> bool {
+    template_versions().iter().all(|&tt| tt == tag)
+}
 
 pub struct VersionIterator {
     next_version: usize,
@@ -78,5 +74,19 @@ pub fn versions_iter(last_version: String) -> VersionIterator {
     VersionIterator {
         next_version: 1,
         last_version,
+    }
+}
+
+#[cfg(test)]
+pub mod tests {
+    use super::*;
+
+    #[test]
+    fn template_versions_test() {
+        println!("version {:?}", template_versions()[0]);
+        assert_eq!(template_versions()[2], "0.1.3");
+
+        // assert!(validate_template_tag("0.1.3"));
+        // assert!(!validate_template_tag("0.1.1"));
     }
 }

@@ -1,6 +1,6 @@
 [package]
 name = "dharitri-sc-meta"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 
 authors = [
@@ -9,7 +9,7 @@ authors = [
 ]
 license = "GPL-3.0-only"
 readme = "README.md"
-repository = "https://github.com/Dharitri-org/dx-sdk-rs"
+repository = "https://github.com/dharitri/mx-sdk-rs"
 homepage = "https://dharitri.com/"
 documentation = "https://docs.dharitri.com/"
 description = "Dharitri smart contract meta-programming tools and build system"
@@ -21,7 +21,8 @@ name = "sc-meta"
 path = "src/main.rs"
 
 [features]
-template-test = []
+template-test-current = []
+template-test-released = []
 
 [dependencies]
 tokio = { version = "1.24", features = ["full"] }
@@ -44,7 +45,7 @@ convert_case = "0.6.0"
 hex = "0.4"
 
 [dependencies.dharitri-sc]
-version = "=0.1.3"
+version = "=0.1.4"
 path = "../base"
 features = ["alloc", "num-bigint", "promises"]
 

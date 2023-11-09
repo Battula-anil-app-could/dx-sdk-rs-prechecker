@@ -1,7 +1,7 @@
 use crate::{facade::ScenarioWorld, scenario::model::*};
 
 impl ScenarioWorld {
-    #[deprecated(since = "0.42.0", note = "Renamed to  `sc_call`.")]
+    #[deprecated(since = "0.1.2", note = "Renamed to  `sc_call`.")]
     pub fn sc_call_step<S>(&mut self, step: S) -> &mut Self
     where
         S: AsMut<ScCallStep>,
@@ -9,7 +9,7 @@ impl ScenarioWorld {
         self.sc_call(step)
     }
 
-    #[deprecated(since = "0.42.0", note = "Renamed to  `sc_query`.")]
+    #[deprecated(since = "0.1.2", note = "Renamed to  `sc_query`.")]
     pub fn sc_query_step<S>(&mut self, step: S) -> &mut Self
     where
         S: AsMut<ScQueryStep>,
@@ -17,7 +17,7 @@ impl ScenarioWorld {
         self.sc_query(step)
     }
 
-    #[deprecated(since = "0.42.0", note = "Renamed to  `sc_deploy`.")]
+    #[deprecated(since = "0.1.2", note = "Renamed to  `sc_deploy`.")]
     pub fn sc_deploy_step<S>(&mut self, step: S) -> &mut Self
     where
         S: AsMut<ScDeployStep>,
