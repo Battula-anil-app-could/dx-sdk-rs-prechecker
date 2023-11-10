@@ -1,6 +1,6 @@
 [package]
 name = "dharitri-sc-wasm-adapter"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 
 authors = [
@@ -9,7 +9,7 @@ authors = [
 ]
 license = "GPL-3.0-only"
 readme = "README.md"
-repository = "https://github.com/dharitri/mx-sdk-rs"
+repository = "https://github.com/Dharitri-org/dx-sdk-rs"
 homepage = "https://dharitri.com/"
 documentation = "https://docs.dharitri.com/"
 description = "Dharitri WebAssembly VM API wrapper"
@@ -22,5 +22,5 @@ categories = [
 ]
 
 [dependencies.dharitri-sc]
-version = "=0.1.4"
+version = "=0.1.5"
 path = "../base"

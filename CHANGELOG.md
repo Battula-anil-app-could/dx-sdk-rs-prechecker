@@ -26,14 +26,18 @@ They are:
 - `dharitri-chain-scenario-format`, in short `scenario-format`, scenario JSON serializer/deserializer, 1 crate.
 - `dharitri-sdk`, in short `sdk`, allows communication with the chain(s), 1 crate.
 
-## [sc 0.1.4, vm 0.1.4] - 2023-08-18
+
+## [sc 0.1.5] - 2023-08-18
+- Template tool tag argument validation bugfix.
+
+## [sc 0.43.1, vm 0.1.4] - 2023-08-18
 - Template tool improvements:
-	- Ability to specify for which framework version to download (based on git tag). The first allowed version is 0.1.3.
+	- Ability to specify for which framework version to download (based on git tag). The first allowed version is 0.43.0.
 	- Ability to specify path where to create new contract.
 	- Various bugfixes.
 - VM implementation for `get_shard_of_address` VM hook.
 
-## [sc 0.1.3, codec 0.0.5, vm 0.5.0] - 2023-08-16
+## [sc 0.43.0, codec 0.0.5, vm 0.5.0] - 2023-08-16
 - Fixed a rustc compatibility issue when building contracts. The meta crate looks at the rustc version when generating the wasm crate code:
 	- pre-rustc-1.71;
 	- between rustc-1.71 and rustc-1.73;
@@ -47,7 +51,7 @@ They are:
 - Arguments `--target-dir-wasm`, `--target-dir-meta`, and `--target-dir-all` in the `dharitri-sc-meta` CLI.
 - Fixed an issue with contract calls and DCT transfers in the `StaticApi` environment.
 
-## [sc 0.1.2, codec 0.18.0, vm 0.4.0, scenario-format 0.20.0, sdk 0.2.0] - 2023-07-15
+## [sc 0.42.0, codec 0.18.0, vm 0.4.0, scenario-format 0.20.0, sdk 0.2.0] - 2023-07-15
 - Multi-endpoints in multi-contracts:
 	- It is now possible to have multiple versions of the same endpoint in different multi-contract variants.
 	- We can also have multiple versions of the constructor.
