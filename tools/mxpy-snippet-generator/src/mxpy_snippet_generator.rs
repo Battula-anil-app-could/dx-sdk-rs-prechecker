@@ -472,7 +472,7 @@ fn main() {
     generator = MxpySnippetGenerator::new_sc_upgrade(
         ChainConfig::Devnet,
         WalletType::PemPath("../some_path/my_file.pem".to_owned()),
-        "moa1qqqqqqqqqqqqqpgqju6muu3k3zuqpqwzua88kjeepyc8jwn5rkqs5ypear".to_owned(),
+        "moa1qqqqqqqqqqqqqpgqju6muu3kj2uqpqwz798g2jeepyn8jwn5rkqs9k2nnk".to_owned(),
         DeployType::WasmFilePath("../path_to_wasm/file.wasm".to_owned()),
         Some("some_out_file.json".to_owned()),
         100_000_000,
@@ -489,8 +489,8 @@ fn main() {
     generator = MxpySnippetGenerator::new_sc_call(
         ChainConfig::Devnet,
         WalletType::PemPath("../some_path/my_file.pem".to_owned()),
-        "moa1dyxrt6ky32hpvqh9w9k8hg22z4ceuu65myzy30qtyw47m9nkrplq742j45".to_owned(),
-        "moa1qqqqqqqqqqqqqpgqju6muu3k3zuqpqwzua88kjeepyc8jwn5rkqs5ypear".to_owned(),
+        "moa1dyxrt6ky32hpvqh9w9kgt262z4c6su65myzy33styw47m9nkrplqwn4hgn".to_owned(),
+        "moa1qqqqqqqqqqqqqpgqju6muu3kj2uqpqwz798g2jeepyn8jwn5rkqs9k2nnk".to_owned(),
         "someEndpointName".to_owned(),
         100_000_000,
     );
@@ -507,8 +507,8 @@ fn main() {
     generator = MxpySnippetGenerator::new_sc_call(
         ChainConfig::Devnet,
         WalletType::PemPath("../some_path/my_file.pem".to_owned()),
-        "moa1dyxrt6ky32hpvqh9w9k8hg22z4ceuu65myzy30qtyw47m9nkrplq742j45".to_owned(),
-        "moa1qqqqqqqqqqqqqpgqju6muu3k3zuqpqwzua88kjeepyc8jwn5rkqs5ypear".to_owned(),
+        "moa1dyxrt6ky32hpvqh9w9kgt262z4c6su65myzy33styw47m9nkrplqwn4hgn".to_owned(),
+        "moa1qqqqqqqqqqqqqpgqju6muu3kj2uqpqwz798g2jeepyn8jwn5rkqs9k2nnk".to_owned(),
         "someEndpointName".to_owned(),
         100_000_000,
     );
@@ -527,8 +527,8 @@ fn main() {
     generator = MxpySnippetGenerator::new_sc_call(
         ChainConfig::Devnet,
         WalletType::PemPath("../some_path/my_file.pem".to_owned()),
-        "moa1dyxrt6ky32hpvqh9w9k8hg22z4ceuu65myzy30qtyw47m9nkrplq742j45".to_owned(),
-        "moa1qqqqqqqqqqqqqpgqju6muu3k3zuqpqwzua88kjeepyc8jwn5rkqs5ypear".to_owned(),
+        "moa1dyxrt6ky32hpvqh9w9kgt262z4c6su65myzy33styw47m9nkrplqwn4hgn".to_owned(),
+        "moa1qqqqqqqqqqqqqpgqju6muu3kj2uqpqwz798g2jeepyn8jwn5rkqs9k2nnk".to_owned(),
         "someEndpointName".to_owned(),
         100_000_000,
     );
@@ -548,8 +548,8 @@ fn main() {
     generator = MxpySnippetGenerator::new_sc_call(
         ChainConfig::Devnet,
         WalletType::PemPath("../some_path/my_file.pem".to_owned()),
-        "moa1dyxrt6ky32hpvqh9w9k8hg22z4ceuu65myzy30qtyw47m9nkrplq742j45".to_owned(),
-        "moa1qqqqqqqqqqqqqpgqju6muu3k3zuqpqwzua88kjeepyc8jwn5rkqs5ypear".to_owned(),
+        "moa1dyxrt6ky32hpvqh9w9kgt262z4c6su65myzy33styw47m9nkrplqwn4hgn".to_owned(),
+        "moa1qqqqqqqqqqqqqpgqju6muu3kj2uqpqwz798g2jeepyn8jwn5rkqs9k2nnk".to_owned(),
         "someEndpointName".to_owned(),
         100_000_000,
     );
@@ -569,8 +569,8 @@ fn main() {
     generator = MxpySnippetGenerator::new_sc_call(
         ChainConfig::Devnet,
         WalletType::PemPath("../some_path/my_file.pem".to_owned()),
-        "moa1dyxrt6ky32hpvqh9w9k8hg22z4ceuu65myzy30qtyw47m9nkrplq742j45".to_owned(),
-        "moa1qqqqqqqqqqqqqpgqju6muu3k3zuqpqwzua88kjeepyc8jwn5rkqs5ypear".to_owned(),
+        "moa1dyxrt6ky32hpvqh9w9kgt262z4c6su65myzy33styw47m9nkrplqwn4hgn".to_owned(),
+        "moa1qqqqqqqqqqqqqpgqju6muu3kj2uqpqwz798g2jeepyn8jwn5rkqs9k2nnk".to_owned(),
         "someEndpointName".to_owned(),
         100_000_000,
     );
@@ -591,7 +591,7 @@ fn main() {
 
     generator = MxpySnippetGenerator::new_sc_query(
         ChainConfig::Devnet,
-        "moa1qqqqqqqqqqqqqpgqju6muu3k3zuqpqwzua88kjeepyc8jwn5rkqs5ypear".to_owned(),
+        "moa1qqqqqqqqqqqqqpgqju6muu3kj2uqpqwz798g2jeepyn8jwn5rkqs9k2nnk".to_owned(),
         "someEndpointName".to_owned(),
     );
     generator.add_argument(&my_val);

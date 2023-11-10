@@ -10,13 +10,13 @@ use crate::{
 
 /// Replaces the EndpointArgumentApi inside a promises callback,
 /// and causes it to read arguments from the callback data instead of the regular tx input.
-#[derive(Clone, Default)]
+#[derive(Clone)]
 pub struct CallbackArgApiWrapper<A: VMApi> {
     _phantom: PhantomData<A>,
 }
 
 impl<A: VMApi> CallbackArgApiWrapper<A> {
-    pub fn new() -> Self {
+    pub(super) fn new() -> Self {
         CallbackArgApiWrapper {
             _phantom: PhantomData,
         }

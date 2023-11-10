@@ -55,7 +55,7 @@ pub trait ContractBase: Sized {
 
     #[inline]
     fn error(&self) -> ErrorHelper<Self::Api> {
-        ErrorHelper::new()
+        ErrorHelper::new_instance()
     }
 
     #[inline]

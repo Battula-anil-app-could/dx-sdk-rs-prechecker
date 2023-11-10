@@ -35,7 +35,7 @@ upgrade() {
 }
 
 issueWrappedMoax() {
-    local TOKEN_DISPLAY_NAME=0x5772617070656445676c64  # "WrappedMoax"
+    local TOKEN_DISPLAY_NAME=0x577261707065644d6f6178  # "WrappedMoax"
     local TOKEN_TICKER=0x574d4f4158  # "WMOAX"
     local INITIAL_SUPPLY=0x01 # 1
     local NR_DECIMALS=0x12 # 18
@@ -66,7 +66,7 @@ wrapMoaxBob() {
 }
 
 unwrapMoaxBob() {
-    local UNWRAP_MOAX_ENDPOINT=0x756e7772617045676c64 # "unwrapMoax"
+    local UNWRAP_MOAX_ENDPOINT=0x756e777261704d6f6178 # "unwrapMoax"
     local UNWRAP_AMOUNT=0x05
 
     getWrappedMoaxTokenIdentifier

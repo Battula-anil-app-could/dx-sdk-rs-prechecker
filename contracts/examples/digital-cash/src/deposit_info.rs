@@ -1,4 +1,8 @@
-dharitri_sc::imports!();
+use dharitri_sc::{
+    api::ManagedTypeApi,
+    types::{BigUint, DctTokenPayment, ManagedAddress, ManagedVec},
+};
+
 dharitri_sc::derive_imports!();
 
 #[derive(NestedEncode, NestedDecode, TopEncode, TopDecode, TypeAbi)]
@@ -16,17 +20,12 @@ where
     M: ManagedTypeApi,
 {
     pub fn get_num_tokens(&self) -> usize {
-        let mut amount = self.dct_funds.len();
-        if self.moax_funds > 0 {
-            amount += 1;
-        }
-
-        amount
+        (self.moax_funds != BigUint::zero()) as usize + self.dct_funds.len()
     }
 }
 
-#[derive(NestedEncode, NestedDecode, TopEncode, TopDecode, TypeAbi)]
+#[derive(NestedEncode, NestedDecode, TopEncode, TopDecode, TypeAbi, Default)]
 pub struct Fee<M: ManagedTypeApi> {
     pub num_token_to_transfer: usize,
-    pub value: MoaxOrDctTokenPayment<M>,
+    pub value: BigUint<M>,
 }

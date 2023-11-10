@@ -284,15 +284,6 @@ fn test_bech32() {
     );
 
     // system SC
-    //let hex_value = hex::decode("000000000000000000010000000000000000000000000000000000000002ffff").unwrap();
-    //let bech32_value = interpret_string("bech32:moa1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls29jpxv", &context);
-
-    // Print the hexadecimal bytes
-    //println!("Hex Bytes: {:?}", hex_value);
-
-    // Print the Bech32 bytes
-    //println!("Bech32 Bytes: {:?}", bech32_value);
-
     assert_eq!(
         hex::decode("000000000000000000010000000000000000000000000000000000000002ffff").unwrap(),
         interpret_string(

@@ -14,7 +14,7 @@
         },
         "framework": {
             "name": "dharitri-sc",
-            "version": "0.1.6"
+            "version": "0.1.7"
         }
     },
     "docs": [
@@ -669,17 +669,6 @@
         },
         {
             "name": "voteSlashMember",
-            "mutability": "mutable",
-            "inputs": [
-                {
-                    "name": "member_to_slash",
-                    "type": "Address"
-                }
-            ],
-            "outputs": []
-        },
-        {
-            "name": "cancelVoteSlashMember",
             "mutability": "mutable",
             "inputs": [
                 {

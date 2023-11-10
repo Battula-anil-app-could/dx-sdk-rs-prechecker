@@ -54,7 +54,10 @@ pub enum StandaloneCliAction {
     #[command(name = "new", about = "Creates a contract by a pre-existing template")]
     Template(TemplateArgs),
 
-    #[command(name = "templates", about = "Lists all pre-existing templates")]
+    #[command(
+        name = "templates",
+        about = "Creates a contract by a pre-existing template"
+    )]
     TemplateList(TemplateListArgs),
     #[command(
         name = "test-gen",

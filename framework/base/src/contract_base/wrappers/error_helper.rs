@@ -13,7 +13,7 @@ pub struct ErrorHelper<M: ManagedTypeApi> {
 }
 
 impl<M: ManagedTypeApi> ErrorHelper<M> {
-    pub fn new() -> Self {
+    pub(crate) fn new_instance() -> Self {
         ErrorHelper {
             _phantom: PhantomData,
         }
