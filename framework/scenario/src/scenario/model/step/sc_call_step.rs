@@ -90,8 +90,29 @@ impl ScCallStep {
         self
     }
 
+    pub fn multi_dct_transfer<T>(mut self, tokens: T) -> Self
+    where
+        T: IntoIterator<Item = TxDCT>,
+    {
+        if self.tx.moax_value.value > 0u32.into() {
+            panic!("Cannot transfer both MOAX and DCT");
+        }
+
+        self.tx.dct_value.extend(tokens);
+
+        self
+    }
+
     pub fn function(mut self, expr: &str) -> Self {
         self.tx.function = expr.to_string();
+        self
+    }
+
+    pub fn tx_hash<T>(mut self, tx_hash_expr: T) -> Self
+    where
+        H256: From<T>,
+    {
+        self.explicit_tx_hash = Some(tx_hash_expr.into());
         self
     }
 
@@ -122,8 +143,13 @@ impl ScCallStep {
         let (to_str, function, moax_value_expr, scenario_args) =
             process_contract_call(contract_call);
         self = self.to(to_str.as_str());
-        self = self.function(function.as_str());
-        self = self.moax_value(moax_value_expr);
+
+        if self.tx.function.is_empty() {
+            self = self.function(function.as_str());
+        }
+        if self.tx.moax_value.value == 0u32.into() {
+            self = self.moax_value(moax_value_expr);
+        }
         for arg in scenario_args {
             self = self.argument(arg.as_str());
         }

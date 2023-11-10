@@ -8,7 +8,7 @@ async fn main() {
     let blockchain = CommunicationProxy::new(DEVNET_GATEWAY.to_string());
     let network_config = blockchain.get_network_config().await.unwrap();
     let addr = Address::from_bech32_string(
-        "moa1qqqqqqqqqqqqqpgqfzydqmdw7m2vazsp6u5p95yxz76t2p9rd8ssz682hq",
+        "moa1qqqqqqqqqqqqqpgqfzydqmdyan0d3qqpuy5p95yxz76t2p9rd8ssrfj3yc",
     )
     .unwrap();
 

@@ -12,11 +12,17 @@ fn get_initial_dns_address() -> Address {
 fn compute_smart_contract_address(owner_address: Address, owner_nonce: u64) -> Address {
     // 8 bytes of zero + 2 bytes for VM type + 20 bytes of hash(owner) + 2 bytes of shard(owner)
     let owner_bytes = owner_address.as_bytes();
+    //eprintln!("owner {:?}", &owner_address);
+    eprintln!("ownwer_nonce {:?}", &owner_bytes);
     let nonce_bytes = owner_nonce.to_le_bytes();
+    //eprintln!("nonce_bytes {:?}", &nonce_bytes);
     let bytes_to_hash = [owner_bytes, &nonce_bytes].concat();
+    //eprintln!("bytes_to_hash {:?}", &bytes_to_hash);
     let initial_padding = [0u8; 8];
+    //eprintln!("initial_paddibg {:?}", &initial_padding);
     let vm_type: [u8; 2] = [5, 0];
     let address = keccak256(&bytes_to_hash);
+    //eprintln!("ddress_hash {:?}", &address);
     let address = [
         initial_padding.as_slice(),
         vm_type.as_slice(),
@@ -24,17 +30,25 @@ fn compute_smart_contract_address(owner_address: Address, owner_nonce: u64) -> A
         &owner_bytes[30..],
     ]
     .concat();
+    eprintln!("address {:?}", &address);
     Address::from_slice(&address)
 }
 
 fn compute_dns_address_for_shard_id(shard_id: u8) -> Address {
     let initial_dns_address = get_initial_dns_address();
+    //eprintln!("initial_dns_address {:?}", &initial_dns_address);
     let initial_dns_address_slice = initial_dns_address.as_array();
+    //eprintln!("initial_dns_address_slice {:?}", &initial_dns_address_slice);
+
     let shard_identifier = &[0u8, shard_id];
+    //eprintln!("shard_identifier {:?}", &shard_identifier);
+
     let deployer_pubkey_prefix =
         &initial_dns_address_slice[0..initial_dns_address_slice.len() - shard_identifier.len()];
+    //eprintln!("deployer_pubkey_prefix {:?}", &deployer_pubkey_prefix);
 
     let deployer_pubkey = [deployer_pubkey_prefix, shard_identifier].concat();
+    
     let deployer_address = Address::from_slice(&deployer_pubkey);
     let deployer_nonce = 0;
     compute_smart_contract_address(deployer_address, deployer_nonce)
@@ -47,11 +61,13 @@ fn shard_id_from_name(name: &str) -> u8 {
 
 pub fn dns_address_for_name(name: &str) -> Address {
     let shard_id = shard_id_from_name(name);
+    eprintln!("{:?}", shard_id);
     compute_dns_address_for_shard_id(shard_id)
 }
 
 #[test]
 fn test_compute_dns_address() {
+    eprintln!("compute {:?}", &compute_dns_address_for_shard_id(0));
     assert_eq!(
         bech32::encode(&compute_dns_address_for_shard_id(0)),
         "moa1qqqqqqqqqqqqqpgqnhvsujzd95jz6fyv3ldmynlf97tscs9nqqqqcalux7"

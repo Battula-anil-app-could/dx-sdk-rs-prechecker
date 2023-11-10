@@ -22,6 +22,7 @@ impl Address {
 
     pub fn from_bech32_string(bech32: &str) -> Result<Self> {
         let (_, data, _) = bech32::decode(bech32)?;
+        eprintln!("{:?}", &data);
         let data = Vec::<u8>::from_base32(&data)?;
 
         let mut bits: [u8; 32] = [0u8; 32];

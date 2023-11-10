@@ -26,18 +26,27 @@ They are:
 - `dharitri-chain-scenario-format`, in short `scenario-format`, scenario JSON serializer/deserializer, 1 crate.
 - `dharitri-sdk`, in short `sdk`, allows communication with the chain(s), 1 crate.
 
+## [sc 0.43.4] - 2023-09-18
+- Bugfix in `sc-meta`: fixed `--locked argument` in `all` command.
+- Template fix: added `dharitri.json` files.
+- Testing framework: check NFT balances and attributes.
 
-## [sc 0.1.5] - 2023-08-18
+## [sc 0.43.3, vm 0.5.2] - 2023-09-08
+- Added several new methods in the `SendWrapper`, which perform MOAX & DCT transfers but don't do anything if the value is zero.
+- Added the `DeleteUsername` builtin function to the VM.
+- Minor fixes in API wrapper constructors.
+
+## [sc 0.43.2] - 2023-08-18
 - Template tool tag argument validation bugfix.
 
-## [sc 0.43.1, vm 0.1.4] - 2023-08-18
+## [sc 0.43.1, vm 0.5.1] - 2023-08-18
 - Template tool improvements:
 	- Ability to specify for which framework version to download (based on git tag). The first allowed version is 0.43.0.
 	- Ability to specify path where to create new contract.
 	- Various bugfixes.
 - VM implementation for `get_shard_of_address` VM hook.
 
-## [sc 0.43.0, codec 0.0.5, vm 0.5.0] - 2023-08-16
+## [sc 0.43.0, codec 0.18.1, vm 0.5.0] - 2023-08-16
 - Fixed a rustc compatibility issue when building contracts. The meta crate looks at the rustc version when generating the wasm crate code:
 	- pre-rustc-1.71;
 	- between rustc-1.71 and rustc-1.73;
@@ -501,7 +510,7 @@ They are:
 ## [dharitri-wasm 0.18.2] - 2021-08-20
 - Crypto API: `ripemd160` function, custom secp256k1 signature verification (`verify_custom_secp256k1`) and signature generation (`encode_secp256k1_der_signature`).
 
-## [dharitri-wasm 0.0.5] - 2021-08-05
+## [dharitri-wasm 0.18.1] - 2021-08-05
 - Added "safe" storage mappers, which serialize keys using nested encoding instead of top. The old respective mappers only kept for backwards compatibility, are now deprecated.
 
 ## [dharitri-wasm 0.18.0, mandos 0.8.0] - 2021-07-28
@@ -579,7 +588,7 @@ They are:
 ## [dharitri-wasm 0.14.1] - 2021-03-25
 - Unified variadic arguments with respective variadic results
 
-## [dharitri-wasm 0.14.0, mandos 0.6.0, dharitri-codec 0.1.4] - 2021-03-22
+## [dharitri-wasm 0.14.0, mandos 0.6.0, dharitri-codec 0.5.1] - 2021-03-22
 - DCT functionality:
 	- DCT system smart contract proxy, though which it is possible to mint, burn, issue, freeze, pause, etc.
 	- Endpoints to handle NFTs. Also added NFT management in the  DCT system smart contract proxy
@@ -758,7 +767,7 @@ They are:
 ## [dharitri-wasm 0.5.2] - 2020-07-09
 - Queue type
 
-## [dharitri-wasm 0.1.4] - 2020-07-02
+## [dharitri-wasm 0.5.1] - 2020-07-02
 - `#[view]` attribute, same as `#[endpoint]`
 - `#[init]` attribute
 - `storage get mut` annotation + BorrowedMutStorage
