@@ -27,7 +27,7 @@ They are:
 - `dharitri-sdk`, in short `sdk`, allows communication with the chain(s), 1 crate.
 
 
-## [sc 0.1.9] - 2023-08-18
+## [sc 0.1.8] - 2023-08-18
 - Template tool tag argument validation bugfix.
 
 ## [sc 0.43.1, vm 0.1.4] - 2023-08-18
@@ -37,7 +37,7 @@ They are:
 	- Various bugfixes.
 - VM implementation for `get_shard_of_address` VM hook.
 
-## [sc 0.43.0, codec 0.0.6, vm 0.5.0] - 2023-08-16
+## [sc 0.43.0, codec 0.0.5, vm 0.5.0] - 2023-08-16
 - Fixed a rustc compatibility issue when building contracts. The meta crate looks at the rustc version when generating the wasm crate code:
 	- pre-rustc-1.71;
 	- between rustc-1.71 and rustc-1.73;
@@ -116,11 +116,11 @@ They are:
 ## [sc 0.40.0, vm 0.2.0] - 2023-04-20
 - Call value `moax_value` and `all_dct_transfers` methods return `ManagedRef` instead of owned objects, because they are cached (to avoid accidental corruption of the underlying cache).
 
-## [sc 0.39.8, vm 0.1.9] - 2023-03-29
+## [sc 0.39.8, vm 0.1.8] - 2023-03-29
 - `dharitri-sc-meta` `test-gen` command: generates Rust integration tests based on scenarios present in the `scenarios` folder.
  - `UnorderedSetMapper` `swap_indexes` method.
 
-## [sc 0.39.7, vm 0.1.9] - 2023-03-18
+## [sc 0.39.7, vm 0.1.8] - 2023-03-18
  - `TokenIdentifier` `ticker` method.
  - `ManagedBuffer` `concat` method.
 
@@ -130,7 +130,7 @@ They are:
 	- Bugfix: the `--mir` flag works correctly in `sc-meta all build`;
 	- Multi-contract configs can now specify separate cargo features for individual contracts, for conditional compilation.
 
-## [sc 0.39.5, vm 0.1.9] - 2023-02-06
+## [sc 0.39.5, vm 0.1.8] - 2023-02-06
 - `dharitri-sc-meta` improvements:
 	- Rust snippet generator fixes. The generator creates compilable code with appropriate argument types.
 	- `local-deps` command: generates a report on the local depedencies of contract crates. Will explore indirect depdencies too.
@@ -501,7 +501,7 @@ They are:
 ## [dharitri-wasm 0.18.2] - 2021-08-20
 - Crypto API: `ripemd160` function, custom secp256k1 signature verification (`verify_custom_secp256k1`) and signature generation (`encode_secp256k1_der_signature`).
 
-## [dharitri-wasm 0.0.6] - 2021-08-05
+## [dharitri-wasm 0.0.5] - 2021-08-05
 - Added "safe" storage mappers, which serialize keys using nested encoding instead of top. The old respective mappers only kept for backwards compatibility, are now deprecated.
 
 ## [dharitri-wasm 0.18.0, mandos 0.8.0] - 2021-07-28
