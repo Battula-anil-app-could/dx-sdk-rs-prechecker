@@ -1,6 +1,6 @@
 [package]
 name = "dharitri-sc-scenario"
-version = "0.1.7"
+version = "0.1.8"
 edition = "2021"
 
 authors = [
@@ -9,7 +9,7 @@ authors = [
 ]
 license = "GPL-3.0-only"
 readme = "README.md"
-repository = "https://github.com/Dharitri-org/dx-sdk-rs"
+repository = "https://github.com/Battula-anil-app-could/dx-sdk-rs-prechecker"
 homepage = "https://dharitri.com/"
 documentation = "https://docs.dharitri.com/"
 description = "Dharitri tools for writing and executing scenarios"
@@ -40,11 +40,11 @@ path = "src/main.rs"
 run-go-tests = []
 
 [dependencies.dharitri-sc]
-version = "=0.1.7"
+version = "=0.1.8"
 path = "../base"
 
 [dependencies.dharitri-sc-meta]
-version = "=0.1.7"
+version = "=0.1.8"
 path = "../meta"
 
 [dependencies.dharitri-chain-scenario-format]

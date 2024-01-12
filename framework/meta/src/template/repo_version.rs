@@ -7,19 +7,19 @@ impl RepoVersion {
     pub fn url(&self) -> String {
         match self {
             RepoVersion::Master => {
-                "https://github.com/dharitri/mx-sdk-rs/archive/refs/heads/master.zip".to_string()
+                "https://github.com/Battula-anil-app-could/dx-sdk-rs-prechecker/archive/refs/heads/master.zip".to_string()
             },
             RepoVersion::Tag(tag) => {
-                format!("https://github.com/dharitri/mx-sdk-rs/archive/refs/tags/v{tag}.zip")
+                format!("https://github.com/Battula-anil-app-could/dx-sdk-rs-prechecker/archive/refs/tags/v{tag}.zip")
             },
         }
     }
 
     pub fn temp_dir_name(&self) -> String {
         match self {
-            RepoVersion::Master => "mx-sdk-rs-master".to_string(),
+            RepoVersion::Master => "dx-sdk-rs-prechecker-master".to_string(),
             RepoVersion::Tag(tag) => {
-                format!("mx-sdk-rs-{tag}")
+                format!("dx-sdk-rs-prechecker-{tag}")
             },
         }
     }
