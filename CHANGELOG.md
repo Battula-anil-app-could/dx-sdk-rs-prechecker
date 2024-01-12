@@ -27,7 +27,7 @@ They are:
 - `dharitri-sdk`, in short `sdk`, allows communication with the chain(s), 1 crate.
 
 
-## [sc 0.1.8] - 2023-08-18
+## [sc 0.1.9] - 2023-08-18
 - Template tool tag argument validation bugfix.
 
 ## [sc 0.43.1, vm 0.1.4] - 2023-08-18
@@ -116,11 +116,11 @@ They are:
 ## [sc 0.40.0, vm 0.2.0] - 2023-04-20
 - Call value `moax_value` and `all_dct_transfers` methods return `ManagedRef` instead of owned objects, because they are cached (to avoid accidental corruption of the underlying cache).
 
-## [sc 0.39.8, vm 0.1.8] - 2023-03-29
+## [sc 0.39.8, vm 0.1.9] - 2023-03-29
 - `dharitri-sc-meta` `test-gen` command: generates Rust integration tests based on scenarios present in the `scenarios` folder.
  - `UnorderedSetMapper` `swap_indexes` method.
 
-## [sc 0.39.7, vm 0.1.8] - 2023-03-18
+## [sc 0.39.7, vm 0.1.9] - 2023-03-18
  - `TokenIdentifier` `ticker` method.
  - `ManagedBuffer` `concat` method.
 
@@ -130,7 +130,7 @@ They are:
 	- Bugfix: the `--mir` flag works correctly in `sc-meta all build`;
 	- Multi-contract configs can now specify separate cargo features for individual contracts, for conditional compilation.
 
-## [sc 0.39.5, vm 0.1.8] - 2023-02-06
+## [sc 0.39.5, vm 0.1.9] - 2023-02-06
 - `dharitri-sc-meta` improvements:
 	- Rust snippet generator fixes. The generator creates compilable code with appropriate argument types.
 	- `local-deps` command: generates a report on the local depedencies of contract crates. Will explore indirect depdencies too.
