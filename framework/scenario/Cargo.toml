@@ -29,5 +29,5 @@ itertools = "0.10.3"
 run-go-tests = []
 
 [dependencies.dharitri-chain-vm]
-version = "=0.2.0"
+version = "=0.1.6"
 path = "../../vm"

@@ -685,7 +685,7 @@ dependencies = [
 
 [[package]]
 name = "dharitri-chain-vm"
-version = "0.2.0"
+version = "0.1.6"
 dependencies = [
  "bech32",
  "dharitri-chain-scenario-format",
@@ -737,7 +737,7 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-codec"
-version = "0.2.0"
+version = "0.0.6"
 dependencies = [
  "arrayvec",
  "dharitri-sc-codec-derive",
@@ -746,7 +746,7 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-codec-derive"
-version = "0.2.0"
+version = "0.0.6"
 dependencies = [
  "hex",
  "proc-macro2",
@@ -823,7 +823,7 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sdk"
-version = "0.2.0"
+version = "0.0.4"
 dependencies = [
  "anyhow",
  "base64 0.13.1",
