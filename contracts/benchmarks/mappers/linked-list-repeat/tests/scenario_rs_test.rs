@@ -12,11 +12,11 @@ fn world() -> ScenarioWorld {
 }
 
 #[test]
-fn linked_list_repeat_rs() {
-    world().run("scenarios/linked_list_repeat.scen.json");
+fn linked_list_repeat_struct_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/linked_list_repeat_struct.scen.json", world());
 }
 
 #[test]
-fn linked_list_repeat_struct_rs() {
-    world().run("scenarios/linked_list_repeat_struct.scen.json");
+fn linked_list_repeat_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/linked_list_repeat.scen.json", world());
 }

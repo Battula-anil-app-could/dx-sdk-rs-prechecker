@@ -45,47 +45,53 @@ fn world() -> ScenarioWorld {
 
 #[test]
 fn use_module_claim_developer_rewards_rs() {
-    world().run("scenarios/use_module_claim_developer_rewards.scen.json");
+    dharitri_sc_scenario::run_rs(
+        "scenarios/use_module_claim_developer_rewards.scen.json",
+        world(),
+    );
 }
 
 #[test]
 fn use_module_dns_register_rs() {
-    world().run("scenarios/use_module_dns_register.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/use_module_dns_register.scen.json", world());
 }
 
 #[test]
 fn use_module_features_rs() {
-    world().run("scenarios/use_module_features.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/use_module_features.scen.json", world());
 }
 
 #[test]
 fn use_module_internal_rs() {
-    world().run("scenarios/use_module_internal.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/use_module_internal.scen.json", world());
+}
+
+#[test]
+fn use_module_only_owner_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/use_module_only_owner.scen.json", world());
+}
+
+#[test]
+fn use_module_only_admin_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/use_module_only_admin.scen.json", world());
 }
 
 #[test]
 fn use_module_no_endpoint_rs() {
-    world().run("scenarios/use_module_no_endpoint.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/use_module_no_endpoint.scen.json", world());
+}
+
+#[test]
+fn use_module_pause_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/use_module_pause.scen.json", world());
 }
 
 /// Will not work in scenarios-rs, since there is no gas usage
 #[test]
 #[ignore]
-fn use_module_ongoing_operation_example_rs() {
-    world().run("scenarios/use_module_ongoing_operation_example.scen.json");
-}
-
-#[test]
-fn use_module_only_admin_rs() {
-    world().run("scenarios/use_module_only_admin.scen.json");
-}
-
-#[test]
-fn use_module_only_owner_rs() {
-    world().run("scenarios/use_module_only_owner.scen.json");
-}
-
-#[test]
-fn use_module_pause_rs() {
-    world().run("scenarios/use_module_pause.scen.json");
+fn use_module_ongoing_operation_rs() {
+    dharitri_sc_scenario::run_rs(
+        "scenarios/use_module_ongoing_operation_example.scen.json",
+        world(),
+    );
 }

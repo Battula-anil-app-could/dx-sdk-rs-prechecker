@@ -1,5 +1,3 @@
-#![allow(deprecated)] // TODO: migrate tests
-
 use dharitri_price_aggregator_sc::{
     price_aggregator_data::{OracleStatus, TimestampedPrice, TokenPair},
     staking::StakingModule,

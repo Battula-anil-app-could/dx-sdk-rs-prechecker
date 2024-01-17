@@ -1,6 +1,5 @@
 #![no_std]
 #![feature(panic_info_message)]
-#![feature(int_roundings)]
 
 // Allows us to use alloc::vec::Vec;
 // TODO: get rid of the legacy API and also of this.
@@ -10,6 +9,5 @@ pub use dharitri_sc;
 
 pub mod api;
 pub mod error_hook;
-pub mod panic;
-pub mod wasm_alloc;
+pub mod wasm_deps;
 mod wasm_macros;

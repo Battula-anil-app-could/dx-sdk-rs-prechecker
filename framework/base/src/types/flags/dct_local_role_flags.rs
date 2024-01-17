@@ -1,5 +1,3 @@
-#![allow(clippy::bad_bit_mask)]
-
 use super::DctLocalRole;
 use bitflags::bitflags;
 

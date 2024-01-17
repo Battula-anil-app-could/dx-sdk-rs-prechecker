@@ -10,8 +10,7 @@
 // Total number of exported functions:   9
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -19,15 +18,14 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     dharitri_wmoax_swap_sc
     (
-        init => init
-        wrapMoax => wrap_moax
-        unwrapMoax => unwrap_moax
-        getLockedMoaxBalance => get_locked_moax_balance
-        getWrappedMoaxTokenId => wrapped_moax_token_id
-        pause => pause_endpoint
-        unpause => unpause_endpoint
-        isPaused => paused_status
+        wrapMoax
+        unwrapMoax
+        getLockedMoaxBalance
+        getWrappedMoaxTokenId
+        pause
+        unpause
+        isPaused
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

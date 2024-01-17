@@ -13,7 +13,7 @@ pub trait FungibleTokenMapperFeatures:
     ) {
         let payment_amount = self.call_value().moax_value();
         self.fungible_token_mapper().issue(
-            payment_amount.clone_value(),
+            payment_amount,
             ManagedBuffer::new(),
             token_ticker,
             initial_supply,
@@ -33,7 +33,7 @@ pub trait FungibleTokenMapperFeatures:
         };
 
         self.fungible_token_mapper().issue(
-            payment.clone_value(),
+            payment,
             ManagedBuffer::new(),
             token_ticker,
             initial_supply,
@@ -51,9 +51,7 @@ pub trait FungibleTokenMapperFeatures:
             ManagedAsyncCallResult::Ok(token_id) => {
                 self.fungible_token_mapper().set_token_id(token_id);
             },
-            ManagedAsyncCallResult::Err(_) => {
-                self.fungible_token_mapper().clear();
-            },
+            ManagedAsyncCallResult::Err(_) => {},
         }
     }
 
@@ -64,9 +62,7 @@ pub trait FungibleTokenMapperFeatures:
                 let token_identifier = self.call_value().single_dct().token_identifier;
                 self.fungible_token_mapper().set_token_id(token_identifier);
             },
-            ManagedAsyncCallResult::Err(_) => {
-                self.fungible_token_mapper().clear();
-            },
+            ManagedAsyncCallResult::Err(_) => {},
         }
     }
 
@@ -75,7 +71,7 @@ pub trait FungibleTokenMapperFeatures:
     fn issue_and_set_all_roles_fungible(&self, token_ticker: ManagedBuffer) {
         let payment = self.call_value().moax_value();
         self.fungible_token_mapper().issue_and_set_all_roles(
-            payment.clone_value(),
+            payment,
             ManagedBuffer::new(),
             token_ticker,
             0,

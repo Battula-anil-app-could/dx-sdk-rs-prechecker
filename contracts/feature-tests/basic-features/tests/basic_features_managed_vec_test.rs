@@ -1,18 +1,20 @@
 use dharitri_sc::types::{BigUint, ManagedVec};
-use dharitri_sc_scenario::{api::StaticApi, *};
+use dharitri_sc_scenario::*;
 
 use basic_features::managed_vec_features::ManagedVecFeatures;
 
 #[test]
 fn test_managed_vec_new() {
-    let bf = basic_features::contract_obj::<StaticApi>();
+    let _ = DebugApi::dummy();
+    let bf = basic_features::contract_obj::<DebugApi>();
     let result = bf.managed_vec_new();
     assert_eq!(ManagedVec::new(), result);
 }
 
 #[test]
 fn test_managed_vec_eq() {
-    let bf = basic_features::contract_obj::<StaticApi>();
+    let _ = DebugApi::dummy();
+    let bf = basic_features::contract_obj::<DebugApi>();
 
     let mut mv1 = ManagedVec::new();
     mv1.push(BigUint::from(1u32));
@@ -35,7 +37,8 @@ fn test_managed_vec_eq() {
 
 #[test]
 fn test_managed_vec_set() {
-    let bf = basic_features::contract_obj::<StaticApi>();
+    let _ = DebugApi::dummy();
+    let bf = basic_features::contract_obj::<DebugApi>();
 
     let mut mv1 = ManagedVec::new();
     mv1.push(BigUint::from(1u32));

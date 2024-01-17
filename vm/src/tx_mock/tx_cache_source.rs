@@ -1,32 +1,31 @@
-use crate::{
-    types::VMAddress,
-    world_mock::{AccountData, BlockchainState},
-};
+use dharitri_sc::types::heap::Address;
+
+use crate::world_mock::{AccountData, BlockchainMock};
 
 use super::TxCache;
 
-pub trait TxCacheSource: Send + Sync {
-    fn load_account(&self, address: &VMAddress) -> Option<AccountData>;
+pub trait TxCacheSource {
+    fn load_account(&self, address: &Address) -> Option<AccountData>;
 
-    fn blockchain_ref(&self) -> &BlockchainState;
+    fn blockchain_ref(&self) -> &BlockchainMock;
 }
 
 impl TxCacheSource for TxCache {
-    fn load_account(&self, address: &VMAddress) -> Option<AccountData> {
+    fn load_account(&self, address: &Address) -> Option<AccountData> {
         Some(self.with_account(address, AccountData::clone))
     }
 
-    fn blockchain_ref(&self) -> &BlockchainState {
+    fn blockchain_ref(&self) -> &BlockchainMock {
         self.blockchain_ref()
     }
 }
 
-impl TxCacheSource for BlockchainState {
-    fn load_account(&self, address: &VMAddress) -> Option<AccountData> {
+impl TxCacheSource for BlockchainMock {
+    fn load_account(&self, address: &Address) -> Option<AccountData> {
         self.accounts.get(address).map(AccountData::clone)
     }
 
-    fn blockchain_ref(&self) -> &BlockchainState {
+    fn blockchain_ref(&self) -> &BlockchainMock {
         self
     }
 }

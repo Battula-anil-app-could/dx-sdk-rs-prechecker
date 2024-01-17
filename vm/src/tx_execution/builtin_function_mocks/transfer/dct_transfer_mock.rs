@@ -1,8 +1,7 @@
+use dharitri_sc::api::DCT_TRANSFER_FUNC_NAME;
+
 use crate::{
-    tx_execution::{
-        builtin_function_names::DCT_TRANSFER_FUNC_NAME, BlockchainVMRef,
-        BuiltinFunctionDctTransferInfo,
-    },
+    tx_execution::builtin_function_mocks::builtin_func_trait::BuiltinFunctionDctTransferInfo,
     tx_mock::{BlockchainUpdate, TxCache, TxInput, TxResult},
 };
 
@@ -29,19 +28,10 @@ impl BuiltinFunction for DCTTransfer {
         }
     }
 
-    fn execute<F>(
-        &self,
-        tx_input: TxInput,
-        tx_cache: TxCache,
-        vm: &BlockchainVMRef,
-        f: F,
-    ) -> (TxResult, BlockchainUpdate)
-    where
-        F: FnOnce(),
-    {
+    fn execute(&self, tx_input: TxInput, tx_cache: TxCache) -> (TxResult, BlockchainUpdate) {
         match try_parse_input(&tx_input) {
             Ok(parsed_tx) => {
-                execute_transfer_builtin_func(vm, parsed_tx, self.name(), tx_input, tx_cache, f)
+                execute_transfer_builtin_func(parsed_tx, self.name(), tx_input, tx_cache)
             },
             Err(message) => {
                 let err_result = TxResult::from_vm_error(message);

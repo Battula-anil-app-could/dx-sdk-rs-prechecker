@@ -10,8 +10,7 @@
 // Total number of exported functions:   8
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -19,14 +18,13 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     single_value_repeat
     (
-        init => init
-        add => add
-        count => count
-        remove => remove
-        add_struct => add_struct
-        count_struct => count_struct
-        remove_struct => remove_struct
+        add
+        count
+        remove
+        add_struct
+        count_struct
+        remove_struct
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

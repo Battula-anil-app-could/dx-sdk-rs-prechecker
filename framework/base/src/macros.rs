@@ -12,7 +12,12 @@ macro_rules! imports {
         };
         use dharitri_sc::{
             abi::TypeAbi,
-            api::{ErrorApiImpl, ManagedTypeApi},
+            api::{
+                BigFloatApi, BigIntApi, BlockchainApi, BlockchainApiImpl, CallValueApi,
+                CallValueApiImpl, CryptoApi, CryptoApiImpl, EllipticCurveApi, ErrorApi,
+                ErrorApiImpl, LogApi, LogApiImpl, ManagedTypeApi, PrintApi, PrintApiImpl, SendApi,
+                SendApiImpl,
+            },
             arrayvec::ArrayVec,
             codec::{
                 multi_types::*, DecodeError, IntoMultiValue, NestedDecode, NestedEncode, TopDecode,

@@ -5,13 +5,12 @@
 ////////////////////////////////////////////////////
 
 // Init:                                 1
-// Endpoints:                            2
+// Endpoints:                            1
 // Async Callback (empty):               1
-// Total number of exported functions:   4
+// Total number of exported functions:   3
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler_with_message!();
@@ -19,10 +18,8 @@ dharitri_sc_wasm_adapter::panic_handler_with_message!();
 dharitri_sc_wasm_adapter::endpoints! {
     panic_message_features
     (
-        init => init
-        panicWithMessage => panic_with_message
-        panicAfterLog => panic_after_log
+        panicWithMessage
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

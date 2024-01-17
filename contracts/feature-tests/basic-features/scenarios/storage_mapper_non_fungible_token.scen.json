@@ -32,7 +32,6 @@
         {
             "step": "scCall",
             "id": "issue-and-set-all-roles-meta",
-            "comment": "returns the token id on VM 1.4, but nothing on VM 1.5",
             "tx": {
                 "from": "address:an_account",
                 "to": "sc:basic-features",
@@ -44,7 +43,9 @@
                 "gasPrice": "0"
             },
             "expect": {
-                "out": "*",
+                "out": [
+                    "str:TICKER-000000"
+                ],
                 "status": "",
                 "logs": "*",
                 "gas": "*",

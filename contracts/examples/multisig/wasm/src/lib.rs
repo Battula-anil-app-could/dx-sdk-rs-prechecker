@@ -10,8 +10,7 @@
 // Total number of exported functions:  22
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -19,28 +18,26 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     multisig
     (
-        init => init
-        deposit => deposit
-        signed => signed
-        sign => sign
-        unsign => unsign
-        discardAction => discard_action
-        getQuorum => quorum
-        getNumBoardMembers => num_board_members
-        getNumProposers => num_proposers
-        getActionLastIndex => get_action_last_index
-        proposeAddBoardMember => propose_add_board_member
-        proposeAddProposer => propose_add_proposer
-        proposeRemoveUser => propose_remove_user
-        proposeChangeQuorum => propose_change_quorum
-        proposeTransferExecute => propose_transfer_execute
-        proposeAsyncCall => propose_async_call
-        proposeSCDeployFromSource => propose_sc_deploy_from_source
-        proposeSCUpgradeFromSource => propose_sc_upgrade_from_source
-        quorumReached => quorum_reached
-        performAction => perform_action_endpoint
-        dnsRegister => dns_register
+        deposit
+        signed
+        sign
+        unsign
+        discardAction
+        getQuorum
+        getNumBoardMembers
+        getNumProposers
+        getActionLastIndex
+        proposeAddBoardMember
+        proposeAddProposer
+        proposeRemoveUser
+        proposeChangeQuorum
+        proposeTransferExecute
+        proposeAsyncCall
+        proposeSCDeployFromSource
+        proposeSCUpgradeFromSource
+        quorumReached
+        performAction
+        dnsRegister
+        callBack
     )
 }
-
-dharitri_sc_wasm_adapter::async_callback! { multisig }

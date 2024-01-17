@@ -1,8 +1,11 @@
 use alloc::boxed::Box;
 
 use crate::{
-    api::{BlockchainApi, BlockchainApiImpl, RawHandle},
-    types::heap::{Address, H256},
+    api::{BlockchainApi, BlockchainApiImpl, ManagedTypeApi},
+    types::{
+        heap::{Address, H256},
+        DctTokenData, ManagedAddress, TokenIdentifier,
+    },
 };
 
 use super::UncallableApi;
@@ -20,9 +23,10 @@ impl BlockchainApiImpl for UncallableApi {
         unreachable!()
     }
 
-    fn load_owner_address_managed(&self, _dest: Self::ManagedBufferHandle) {
+    fn get_owner_address_legacy(&self) -> Address {
         unreachable!()
     }
+
     fn get_shard_of_address_legacy(&self, _address: &Address) -> u32 {
         unreachable!()
     }
@@ -39,7 +43,7 @@ impl BlockchainApiImpl for UncallableApi {
         unreachable!()
     }
 
-    fn load_state_root_hash_managed(&self, _dest: Self::ManagedBufferHandle) {
+    fn get_state_root_hash_legacy(&self) -> H256 {
         unreachable!()
     }
 
@@ -67,7 +71,7 @@ impl BlockchainApiImpl for UncallableApi {
         unreachable!()
     }
 
-    fn load_block_random_seed_managed(&self, _dest: Self::ManagedBufferHandle) {
+    fn get_block_random_seed_legacy(&self) -> Box<[u8; 48]> {
         unreachable!()
     }
 
@@ -109,20 +113,21 @@ impl BlockchainApiImpl for UncallableApi {
         unreachable!()
     }
 
-    fn managed_get_dct_token_data(
+    fn load_dct_token_data<M: ManagedTypeApi>(
         &self,
-        _address_handle: RawHandle,
-        _token_id_handle: RawHandle,
+        _address: &ManagedAddress<M>,
+        _token: &TokenIdentifier<M>,
         _nonce: u64,
-        _value_handle: RawHandle,
-        _properties_handle: RawHandle,
-        _hash_handle: RawHandle,
-        _name_handle: RawHandle,
-        _attributes_handle: RawHandle,
-        _creator_handle: RawHandle,
-        _royalties_handle: RawHandle,
-        _uris_handle: RawHandle,
-    ) {
+    ) -> DctTokenData<M> {
+        unreachable!()
+    }
+
+    fn load_dct_token_data_unmanaged<M: ManagedTypeApi>(
+        &self,
+        _address: &ManagedAddress<M>,
+        _token: &TokenIdentifier<M>,
+        _nonce: u64,
+    ) -> DctTokenData<M> {
         unreachable!()
     }
 

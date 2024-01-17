@@ -1,9 +1,9 @@
 use crate::{
-    api::{InvalidSliceError, ManagedBufferApiImpl},
+    api::{InvalidSliceError, ManagedBufferApi},
     types::heap::BoxedBytes,
 };
 
-impl ManagedBufferApiImpl for super::UncallableApi {
+impl ManagedBufferApi for super::UncallableApi {
     fn mb_new_empty(&self) -> Self::ManagedBufferHandle {
         unreachable!()
     }
@@ -36,6 +36,14 @@ impl ManagedBufferApiImpl for super::UncallableApi {
         _slice_len: usize,
         _dest_handle: Self::ManagedBufferHandle,
     ) -> Result<(), InvalidSliceError> {
+        unreachable!()
+    }
+
+    fn mb_copy_to_slice_pad_right(
+        &self,
+        _handle: Self::ManagedBufferHandle,
+        _destination: &mut [u8],
+    ) {
         unreachable!()
     }
 

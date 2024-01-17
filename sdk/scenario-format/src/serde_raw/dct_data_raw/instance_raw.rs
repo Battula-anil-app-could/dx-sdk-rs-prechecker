@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::serde_raw::ValueSubTree;
 
-#[derive(Serialize, Deserialize, Default)]
+#[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct DctInstanceRaw {
     #[serde(default)]

@@ -8,13 +8,9 @@ pub struct Account {
     pub address: Address,
     pub nonce: u64,
     pub balance: String,
-    pub username: String,
     pub code: String,
-    pub code_hash: Option<String>,
+    pub code_hash: Option<Vec<u8>>,
     pub root_hash: Option<String>,
-    pub code_metadata: Option<String>,
-    pub developer_reward: Option<String>,
-    pub owner_address: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

@@ -18,12 +18,6 @@ impl fmt::Debug for LockableStaticBuffer {
     }
 }
 
-impl Default for LockableStaticBuffer {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
 impl LockableStaticBuffer {
     pub const fn new() -> Self {
         LockableStaticBuffer {

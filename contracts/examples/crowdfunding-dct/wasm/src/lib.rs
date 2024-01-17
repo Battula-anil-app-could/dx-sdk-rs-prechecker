@@ -10,8 +10,7 @@
 // Total number of exported functions:  10
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -19,16 +18,15 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     crowdfunding_dct
     (
-        init => init
-        fund => fund
-        status => status
-        getCurrentFunds => get_current_funds
-        claim => claim
-        getTarget => target
-        getDeadline => deadline
-        getDeposit => deposit
-        getCrowdfundingTokenIdentifier => cf_token_identifier
+        fund
+        status
+        getCurrentFunds
+        claim
+        getTarget
+        getDeadline
+        getDeposit
+        getCrowdfundingTokenIdentifier
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

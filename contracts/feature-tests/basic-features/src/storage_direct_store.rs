@@ -6,10 +6,6 @@ use crate::types::*;
 #[dharitri_sc::module]
 pub trait StorageStoreFeatures {
     #[endpoint]
-    #[storage_set("storage_bytes")]
-    fn store_bytes(&self, bi: ManagedBuffer);
-
-    #[endpoint]
     #[storage_set("big_uint")]
     fn store_big_uint(&self, bi: BigUint);
 

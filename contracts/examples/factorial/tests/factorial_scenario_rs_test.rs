@@ -10,5 +10,5 @@ fn world() -> ScenarioWorld {
 
 #[test]
 fn factorial_rs() {
-    world().run("scenarios/factorial.scen.json");
+    dharitri_sc_scenario::run_rs("scenarios/factorial.scen.json", world());
 }

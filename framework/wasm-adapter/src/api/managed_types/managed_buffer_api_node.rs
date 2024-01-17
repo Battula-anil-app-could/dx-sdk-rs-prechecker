@@ -1,6 +1,7 @@
-use crate::api::unsafe_buffer;
+use crate::{api::unsafe_buffer, error_hook};
 use dharitri_sc::{
-    api::{InvalidSliceError, ManagedBufferApiImpl},
+    api::{InvalidSliceError, ManagedBufferApi},
+    err_msg,
     types::heap::BoxedBytes,
 };
 
@@ -39,7 +40,7 @@ extern "C" {
     fn managedBufferToHex(sourceHandle: i32, destinationHandle: i32);
 }
 
-impl ManagedBufferApiImpl for crate::api::VmApiImpl {
+impl ManagedBufferApi for crate::api::VmApiImpl {
     #[inline]
     fn mb_new_empty(&self) -> Self::ManagedBufferHandle {
         unsafe { mBufferNew() }
@@ -106,6 +107,23 @@ impl ManagedBufferApiImpl for crate::api::VmApiImpl {
                 Ok(())
             } else {
                 Err(InvalidSliceError)
+            }
+        }
+    }
+
+    fn mb_copy_to_slice_pad_right(
+        &self,
+        handle: Self::ManagedBufferHandle,
+        destination: &mut [u8],
+    ) {
+        unsafe {
+            let byte_len = mBufferGetLength(handle) as usize;
+            if byte_len > destination.len() {
+                error_hook::signal_error(err_msg::VALUE_EXCEEDS_SLICE)
+            }
+            if byte_len > 0 {
+                let start_index = destination.len() - byte_len;
+                let _ = mBufferGetBytes(handle, destination.as_mut_ptr().add(start_index));
             }
         }
     }

@@ -1,10 +1,12 @@
 use adder::*;
 use dharitri_sc::types::BigUint;
-use dharitri_sc_scenario::api::SingleTxApi;
+use dharitri_sc_scenario::DebugApi;
 
 #[test]
-fn adder_unit_test() {
-    let adder = adder::contract_obj::<SingleTxApi>();
+fn test_add() {
+    let _ = DebugApi::dummy();
+
+    let adder = adder::contract_obj::<DebugApi>();
 
     adder.init(BigUint::from(5u32));
     assert_eq!(BigUint::from(5u32), adder.sum().get());

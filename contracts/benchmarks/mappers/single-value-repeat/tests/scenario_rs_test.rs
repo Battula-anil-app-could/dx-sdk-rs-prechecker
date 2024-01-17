@@ -12,11 +12,11 @@ fn world() -> ScenarioWorld {
 }
 
 #[test]
-fn single_value_repeat_rs() {
-    world().run("scenarios/single_value_repeat.scen.json");
+fn single_value_repeat_struct_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/single_value_repeat_struct.scen.json", world());
 }
 
 #[test]
-fn single_value_repeat_struct_rs() {
-    world().run("scenarios/single_value_repeat_struct.scen.json");
+fn single_value_repeat_rs() {
+    dharitri_sc_scenario::run_rs("scenarios/single_value_repeat.scen.json", world());
 }

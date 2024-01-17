@@ -10,8 +10,7 @@
 // Total number of exported functions:   8
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -19,14 +18,13 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     dct_system_sc_mock
     (
-        init => init
-        issue => issue_fungible
-        issueNonFungible => issue_non_fungible
-        issueSemiFungible => issue_semi_fungible
-        registerMetaDCT => issue_meta_dct
-        setSpecialRole => set_special_roles
-        registerAndSetAllRoles => register_and_set_all_roles
+        issue
+        issueNonFungible
+        issueSemiFungible
+        registerMetaDCT
+        setSpecialRole
+        registerAndSetAllRoles
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

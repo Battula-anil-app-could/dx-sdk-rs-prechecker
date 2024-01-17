@@ -6,14 +6,17 @@ use crate::bonding_curve::{
     utils::structs::CurveArguments,
 };
 
-#[derive(
-    TopEncode, TopDecode, NestedEncode, NestedDecode, TypeAbi, PartialEq, Eq, Clone, Default,
-)]
+#[derive(TopEncode, TopDecode, NestedEncode, NestedDecode, TypeAbi, PartialEq, Eq, Clone)]
 pub enum FunctionSelector<M: ManagedTypeApi> {
     Linear(LinearFunction<M>),
     CustomExample(BigUint<M>),
-    #[default]
     None,
+}
+
+impl<M: ManagedTypeApi> Default for FunctionSelector<M> {
+    fn default() -> Self {
+        FunctionSelector::None
+    }
 }
 
 impl<M: ManagedTypeApi> CurveFunction<M> for FunctionSelector<M> {

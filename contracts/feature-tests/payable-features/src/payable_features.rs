@@ -16,8 +16,8 @@ pub trait PayableFeatures {
         &self,
     ) -> MultiValue2<BigUint, ManagedVec<Self::Api, DctTokenPayment<Self::Api>>> {
         (
-            self.call_value().moax_value().clone_value(),
-            self.call_value().all_dct_transfers().clone_value(),
+            self.call_value().moax_value(),
+            self.call_value().all_dct_transfers(),
         )
             .into()
     }
@@ -26,9 +26,9 @@ pub trait PayableFeatures {
     #[payable("*")]
     fn payment_multiple(
         &self,
-        #[payment_multi] payments: ManagedRef<'static, ManagedVec<DctTokenPayment<Self::Api>>>,
+        #[payment_multi] payments: ManagedVec<DctTokenPayment<Self::Api>>,
     ) -> ManagedVec<DctTokenPayment<Self::Api>> {
-        payments.clone_value()
+        payments
     }
 
     #[endpoint]
@@ -81,7 +81,7 @@ pub trait PayableFeatures {
         &self,
         #[payment_token] token: MoaxOrDctTokenIdentifier,
     ) -> MultiValue2<BigUint, MoaxOrDctTokenIdentifier> {
-        let payment = self.call_value().moax_value().clone_value();
+        let payment = self.call_value().moax_value();
         (payment, token).into()
     }
 
@@ -101,7 +101,7 @@ pub trait PayableFeatures {
         &self,
         #[payment_token] token: MoaxOrDctTokenIdentifier,
     ) -> MultiValue2<BigUint, MoaxOrDctTokenIdentifier> {
-        let payment = self.call_value().moax_value().clone_value();
+        let payment = self.call_value().moax_value();
         (payment, token).into()
     }
 
@@ -110,7 +110,7 @@ pub trait PayableFeatures {
     fn payable_moax_4(&self) -> MultiValue2<BigUint, MoaxOrDctTokenIdentifier> {
         let payment = self.call_value().moax_value();
         let token = self.call_value().moax_or_single_dct().token_identifier;
-        (payment.clone_value(), token).into()
+        (payment, token).into()
     }
 
     #[endpoint]

@@ -1,31 +1,13 @@
 use std::path::PathBuf;
 
-use crate::value_interpreter::VMIdentifier;
-
-#[derive(Default, Clone)]
+#[derive(Default)]
 pub struct InterpreterContext {
     pub context_path: PathBuf,
-    pub vm_type: VMIdentifier,
-    pub allow_missing_files: bool,
 }
 
 impl InterpreterContext {
-    pub fn new() -> Self {
-        InterpreterContext::default()
-    }
-
-    pub fn with_dir(self, context_path: PathBuf) -> Self {
-        InterpreterContext {
-            context_path,
-            ..self
-        }
-    }
-
-    pub fn with_allowed_missing_files(self) -> Self {
-        InterpreterContext {
-            allow_missing_files: true,
-            ..self
-        }
+    pub fn new(context_path: PathBuf) -> Self {
+        InterpreterContext { context_path }
     }
 }
 

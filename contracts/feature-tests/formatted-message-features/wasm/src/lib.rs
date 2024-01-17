@@ -10,8 +10,7 @@
 // Total number of exported functions:  17
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -19,23 +18,22 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     formatted_message_features
     (
-        init => init
-        static_message => static_message
-        dynamic_message => dynamic_message
-        dynamic_message_hex => dynamic_message_hex
-        dynamic_message_multiple => dynamic_message_multiple
-        dynamic_message_ascii => dynamic_message_ascii
-        decode_error_message => decode_error_message
-        print_message => print_message
-        print_message_hex => print_message_hex
-        print_message_binary => print_message_binary
-        print_message_codec => print_message_codec
-        format_message_one_part => format_message_one_part
-        format_message_multiple_parts => format_message_multiple_parts
-        format_message_big_int => format_message_big_int
-        format_message_managed_buffer => format_message_managed_buffer
-        format_message_managed_buffer_hex => format_message_managed_buffer_hex
+        static_message
+        dynamic_message
+        dynamic_message_hex
+        dynamic_message_multiple
+        dynamic_message_ascii
+        decode_error_message
+        print_message
+        print_message_hex
+        print_message_binary
+        print_message_codec
+        format_message_one_part
+        format_message_multiple_parts
+        format_message_big_int
+        format_message_managed_buffer
+        format_message_managed_buffer_hex
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

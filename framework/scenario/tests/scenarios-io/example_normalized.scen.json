@@ -410,14 +410,11 @@
                     },
                     "username": "str:check.dharitri",
                     "storage": {},
-                    "code": "",
-                    "owner": "*"
+                    "code": ""
                 },
                 "address:account_with_defaults": {
                     "dct": "*",
-                    "storage": "*",
-                    "code": "*",
-                    "owner": "*"
+                    "storage": "*"
                 },
                 "address:smart_contract_address": {
                     "nonce": "0x00",
@@ -442,14 +439,10 @@
                 },
                 "address:smart_contract_address_2": {
                     "storage": "*",
-                    "code": "*",
-                    "owner": "*",
                     "asyncCallData": "``func@arg1@arg2"
                 },
                 "str:account_with_defaults___________": {
-                    "storage": "*",
-                    "code": "*",
-                    "owner": "*"
+                    "storage": "*"
                 },
                 "+": ""
             }

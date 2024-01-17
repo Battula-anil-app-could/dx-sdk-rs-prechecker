@@ -10,8 +10,7 @@
 // Total number of exported functions:  11
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -19,17 +18,15 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     kitty_auction
     (
-        init => init
-        setKittyOwnershipContractAddress => set_kitty_ownership_contract_address_endpoint
-        createAndAuctionGenZeroKitty => create_and_auction_gen_zero_kitty
-        isUpForAuction => is_up_for_auction
-        getAuctionStatus => get_auction_status
-        getCurrentWinningBid => get_current_winning_bid
-        createSaleAuction => create_sale_auction
-        createSiringAuction => create_siring_auction
-        bid => bid
-        endAuction => end_auction
+        setKittyOwnershipContractAddress
+        createAndAuctionGenZeroKitty
+        isUpForAuction
+        getAuctionStatus
+        getCurrentWinningBid
+        createSaleAuction
+        createSiringAuction
+        bid
+        endAuction
+        callBack
     )
 }
-
-dharitri_sc_wasm_adapter::async_callback! { kitty_auction }

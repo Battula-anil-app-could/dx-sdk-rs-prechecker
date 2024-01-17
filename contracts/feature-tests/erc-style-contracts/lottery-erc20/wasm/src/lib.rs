@@ -10,24 +10,21 @@
 // Total number of exported functions:   9
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
-dharitri_sc_wasm_adapter::allocator!(static64k);
+dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
 
 dharitri_sc_wasm_adapter::endpoints! {
     lottery_erc20
     (
-        init => init
-        start => start
-        createLotteryPool => create_lottery_pool
-        buy_ticket => buy_ticket
-        determine_winner => determine_winner
-        status => status
-        lotteryInfo => get_lottery_info
-        erc20ContractManagedAddress => get_erc20_contract_address
+        start
+        createLotteryPool
+        buy_ticket
+        determine_winner
+        status
+        lotteryInfo
+        erc20ContractManagedAddress
+        callBack
     )
 }
-
-dharitri_sc_wasm_adapter::async_callback! { lottery_erc20 }

@@ -10,8 +10,7 @@
 // Total number of exported functions:  12
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
@@ -19,18 +18,17 @@ dharitri_sc_wasm_adapter::panic_handler!();
 dharitri_sc_wasm_adapter::endpoints! {
     ping_pong_moax
     (
-        init => init
-        ping => ping
-        pong => pong
-        pongAll => pong_all
-        getUserAddresses => get_user_addresses
-        getPingAmount => ping_amount
-        getDeadline => deadline
-        getActivationTimestamp => activation_timestamp
-        getMaxFunds => max_funds
-        getUserStatus => user_status
-        pongAllLastUser => pong_all_last_user
+        ping
+        pong
+        pongAll
+        getUserAddresses
+        getPingAmount
+        getDeadline
+        getActivationTimestamp
+        getMaxFunds
+        getUserStatus
+        pongAllLastUser
     )
 }
 
-dharitri_sc_wasm_adapter::async_callback_empty! {}
+dharitri_sc_wasm_adapter::empty_callback! {}

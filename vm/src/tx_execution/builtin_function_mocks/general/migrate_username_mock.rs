@@ -1,4 +1,4 @@
-use crate::tx_execution::{builtin_function_names::MIGRATE_USERNAME_FUNC_NAME, BlockchainVMRef};
+use dharitri_sc::api::MIGRATE_USERNAME_FUNC_NAME;
 
 use crate::tx_mock::{BlockchainUpdate, TxCache, TxInput, TxResult};
 
@@ -13,16 +13,7 @@ impl BuiltinFunction for MigrateUserName {
         MIGRATE_USERNAME_FUNC_NAME
     }
 
-    fn execute<F>(
-        &self,
-        tx_input: TxInput,
-        tx_cache: TxCache,
-        _vm: &BlockchainVMRef,
-        _f: F,
-    ) -> (TxResult, BlockchainUpdate)
-    where
-        F: FnOnce(),
-    {
+    fn execute(&self, tx_input: TxInput, tx_cache: TxCache) -> (TxResult, BlockchainUpdate) {
         self.execute_with_result(tx_input, tx_cache)
             .unwrap_or_else(|err_result| (err_result, BlockchainUpdate::empty()))
     }

@@ -10,30 +10,27 @@
 // Total number of exported functions:  15
 
 #![no_std]
-#![allow(internal_features)]
-#![feature(lang_items)]
+#![feature(alloc_error_handler, lang_items)]
 
-dharitri_sc_wasm_adapter::allocator!(static64k);
+dharitri_sc_wasm_adapter::allocator!();
 dharitri_sc_wasm_adapter::panic_handler!();
 
 dharitri_sc_wasm_adapter::endpoints! {
     erc1155
     (
-        init => init
-        safeTransferFrom => safe_transfer_from
-        safeBatchTransferFrom => safe_batch_transfer_from
-        setApprovalForAll => set_approved_for_all
-        createToken => create_token
-        mint => mint
-        burn => burn
-        balanceOf => balance_of
-        balanceOfBatch => balance_of_batch
-        getTokenOwner => token_owner
-        getTokenTypeCreator => token_type_creator
-        getTokenTypeUri => token_type_uri
-        isFungible => is_fungible
-        isApprovedForAll => is_approved
+        safeTransferFrom
+        safeBatchTransferFrom
+        setApprovalForAll
+        createToken
+        mint
+        burn
+        balanceOf
+        balanceOfBatch
+        getTokenOwner
+        getTokenTypeCreator
+        getTokenTypeUri
+        isFungible
+        isApprovedForAll
+        callBack
     )
 }
-
-dharitri_sc_wasm_adapter::async_callback! { erc1155 }

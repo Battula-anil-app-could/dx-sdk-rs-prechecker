@@ -4,10 +4,6 @@ use super::CliArgsToRaw;
 
 #[derive(Clone, PartialEq, Eq, Debug, Args)]
 pub struct BuildArgs {
-    /// Require that the Cargo.lock in the wasm crates is up to date.
-    #[arg(long = "locked", verbatim_doc_comment)]
-    pub locked: bool,
-
     /// Adds debug symbols in the resulting WASM binary. Adds bloat, but helps with debugging. Do not use in production.
     #[arg(long = "wasm-symbols", verbatim_doc_comment)]
     pub wasm_symbols: bool,
@@ -32,14 +28,6 @@ pub struct BuildArgs {
     #[arg(long = "wat", verbatim_doc_comment)]
     pub wat: bool,
 
-    /// Also emit MIR files when building.
-    #[arg(long = "mir", verbatim_doc_comment)]
-    pub emit_mir: bool,
-
-    /// Also emit LL (LLVM) files when building.
-    #[arg(long = "llvm-ir", verbatim_doc_comment)]
-    pub emit_llvm_ir: bool,
-
     #[arg(
         long = "no-imports",
         help = "Skips extracting the EI imports after building the contracts.",
@@ -47,11 +35,10 @@ pub struct BuildArgs {
     )]
     pub extract_imports: bool,
 
-    /// For the wasm crate, allows specifying the target directory where the Rust compiler will build the intermediary files.
+    /// Allows specifying the target directory where the Rust compiler will build the intermediary files.
     /// Sharing the same target directory can speed up building multiple contract crates at once.
-    /// Has alias `target-dir` for backwards compatibility.
-    #[arg(long = "target-dir-wasm", alias = "target-dir", verbatim_doc_comment)]
-    pub target_dir_wasm: Option<String>,
+    #[arg(long = "target-dir", verbatim_doc_comment)]
+    pub target_dir: Option<String>,
 
     /// Generate a twiggy top report after building.
     #[arg(long = "twiggy-top", verbatim_doc_comment)]
@@ -89,16 +76,13 @@ impl Default for BuildArgs {
     #[allow(deprecated)]
     fn default() -> Self {
         BuildArgs {
-            locked: false,
             wasm_symbols: false,
             wasm_name_override: None,
             wasm_name_suffix: None,
             wasm_opt: true,
             wat: false,
-            emit_mir: false,
-            emit_llvm_ir: false,
             extract_imports: true,
-            target_dir_wasm: None,
+            target_dir: None,
             twiggy_top: false,
             twiggy_paths: false,
             twiggy_monos: false,
@@ -136,19 +120,12 @@ impl CliArgsToRaw for BuildArgs {
         if self.wat {
             raw.push("--wat".to_string());
         }
-        if self.emit_mir {
-            raw.push("--mir".to_string());
-        }
-        if self.emit_llvm_ir {
-            raw.push("--llvm-ir".to_string());
-        }
         if !self.extract_imports {
             raw.push("--no-imports".to_string());
         }
-        if let Some(target_dir_wasm) = &self.target_dir_wasm {
-            // not using --target-dir-wasm, for backward compatibility
+        if let Some(target_dir) = &self.target_dir {
             raw.push("--target-dir".to_string());
-            raw.push(target_dir_wasm.clone());
+            raw.push(target_dir.clone());
         }
         if self.twiggy_top {
             raw.push("--twiggy-top".to_string());
@@ -168,11 +145,10 @@ impl CliArgsToRaw for BuildArgs {
 
 #[derive(Clone, PartialEq, Eq, Debug, Args)]
 pub struct BuildDbgArgs {
-    /// For the wasm crate, allows specifying the target directory where the Rust compiler will build the intermediary files.
+    /// Allows specifying the target directory where the Rust compiler will build the intermediary files.
     /// Sharing the same target directory can speed up building multiple contract crates at once.
-    /// Has alias `target-dir` for backwards compatibility.
-    #[arg(long = "target-dir-wasm", alias = "target-dir", verbatim_doc_comment)]
-    pub target_dir_wasm: Option<String>,
+    #[arg(long = "target-dir", verbatim_doc_comment)]
+    pub target_dir: Option<String>,
 
     /// Generate a twiggy top report after building.
     #[arg(long = "twiggy-top", verbatim_doc_comment)]
@@ -201,7 +177,7 @@ impl BuildDbgArgs {
             wasm_opt: false,
             wat: true,
             extract_imports: false,
-            target_dir_wasm: self.target_dir_wasm,
+            target_dir: self.target_dir,
             twiggy_top: self.twiggy_top,
             twiggy_paths: self.twiggy_paths,
             twiggy_monos: self.twiggy_monos,
@@ -214,10 +190,9 @@ impl BuildDbgArgs {
 impl CliArgsToRaw for BuildDbgArgs {
     fn to_raw(&self) -> Vec<String> {
         let mut raw = Vec::new();
-        if let Some(target_dir_wasm) = &self.target_dir_wasm {
-            // not using --target-dir-wasm, for backward compatibility
+        if let Some(target_dir) = &self.target_dir {
             raw.push("--target-dir".to_string());
-            raw.push(target_dir_wasm.clone());
+            raw.push(target_dir.clone());
         }
         if self.twiggy_top {
             raw.push("--twiggy-top".to_string());
@@ -237,17 +212,16 @@ impl CliArgsToRaw for BuildDbgArgs {
 
 #[derive(Clone, PartialEq, Eq, Debug, Args)]
 pub struct TwiggyArgs {
-    /// For the wasm crate, allows specifying the target directory where the Rust compiler will build the intermediary files.
+    /// Allows specifying the target directory where the Rust compiler will build the intermediary files.
     /// Sharing the same target directory can speed up building multiple contract crates at once.
-    /// Has alias `target-dir` for backwards compatibility.
-    #[arg(long = "target-dir-wasm", alias = "target-dir", verbatim_doc_comment)]
-    pub target_dir_wasm: Option<String>,
+    #[arg(long = "target-dir", verbatim_doc_comment)]
+    pub target_dir: Option<String>,
 }
 
 impl TwiggyArgs {
     pub fn into_build_args(self) -> BuildArgs {
         BuildDbgArgs {
-            target_dir_wasm: self.target_dir_wasm,
+            target_dir: self.target_dir,
             twiggy_top: true,
             twiggy_paths: true,
             twiggy_monos: true,
@@ -260,8 +234,7 @@ impl TwiggyArgs {
 impl CliArgsToRaw for TwiggyArgs {
     fn to_raw(&self) -> Vec<String> {
         let mut raw = Vec::new();
-        if let Some(target_dir) = &self.target_dir_wasm {
-            // not using --target-dir-wasm, for backward compatibility
+        if let Some(target_dir) = &self.target_dir {
             raw.push("--target-dir".to_string());
             raw.push(target_dir.clone());
         }

@@ -1,6 +1,6 @@
 use core::cmp::Ordering;
 
-use dharitri_sc::api::{BigFloatApiImpl, Sign};
+use dharitri_sc::api::{BigFloatApi, Sign};
 
 extern "C" {
     fn bigFloatNewFromParts(integralPart: i32, fractionalPart: i32, exponent: i32) -> i32;
@@ -67,7 +67,7 @@ macro_rules! unary_op_method_big_int_handle {
     };
 }
 
-impl BigFloatApiImpl for crate::api::VmApiImpl {
+impl BigFloatApi for crate::api::VmApiImpl {
     #[inline]
     fn bf_from_parts(
         &self,

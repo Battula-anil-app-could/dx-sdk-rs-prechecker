@@ -21,7 +21,7 @@ pub trait Child {
         self.send()
             .dct_system_sc_proxy()
             .issue_fungible(
-                issue_cost.clone_value(),
+                issue_cost,
                 &token_display_name,
                 &token_ticker,
                 &initial_supply,

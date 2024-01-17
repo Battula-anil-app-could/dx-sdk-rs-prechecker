@@ -5,9 +5,7 @@ use serde::{
 };
 use std::fmt;
 
-#[derive(Default)]
 pub enum CheckBytesValueRaw {
-    #[default]
     Unspecified,
     Star,
     Equal(ValueSubTree),
@@ -20,6 +18,12 @@ impl CheckBytesValueRaw {
 
     pub fn is_unspecified(&self) -> bool {
         matches!(self, CheckBytesValueRaw::Unspecified)
+    }
+}
+
+impl Default for CheckBytesValueRaw {
+    fn default() -> Self {
+        CheckBytesValueRaw::Unspecified
     }
 }
 

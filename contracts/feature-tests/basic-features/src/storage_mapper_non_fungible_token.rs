@@ -18,7 +18,7 @@ pub trait NonFungibleTokenMapperFeatures:
         let payment = self.call_value().moax_value();
         self.non_fungible_token_mapper().issue_and_set_all_roles(
             DctTokenType::Meta,
-            payment.clone_value(),
+            payment,
             ManagedBuffer::new(),
             token_ticker,
             0,
