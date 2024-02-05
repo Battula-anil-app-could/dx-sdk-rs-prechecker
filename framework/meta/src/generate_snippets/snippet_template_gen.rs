@@ -20,7 +20,7 @@ use dharitri_sc_snippets::{{
         DebugApi,
     }},
     env_logger,
-    erdrs::wallet::Wallet,
+    moars::wallet::Wallet,
     tokio, Interactor,
 }};
 use std::{{
@@ -34,7 +34,7 @@ use std::{{
 }
 
 pub(crate) fn write_snippet_constants(file: &mut File) {
-    writeln!(file, "const GATEWAY: &str = dharitri_sc_snippets::erdrs::blockchain::rpc::DEVNET_GATEWAY;
+    writeln!(file, "const GATEWAY: &str = dharitri_sc_snippets::moars::blockchain::rpc::DEVNET_GATEWAY;
 const PEM: &str = \"alice.pem\";
 const SC_ADDRESS: &str = \"\";
 
